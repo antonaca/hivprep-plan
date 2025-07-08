@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementation Planning & Tracking Template</title>
+    <title>Implementation Plan</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -606,7 +606,7 @@
         .legend-color-box { width: 12px; height: 12px; border-radius: 3px; }
 
         /* --- KPI Cards --- */
-        #report-kpi-container { padding: 0; margin-bottom: 2rem; }
+        #report-kpi-container { padding-bottom: 1rem; margin-bottom: 1rem; }
         .kpi-grid { 
             display: grid; 
             gap: 1.5rem; 
@@ -714,7 +714,7 @@
             display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: stretch;
             padding: 0.5rem;
             margin: 0 -0.5rem;
@@ -731,6 +731,7 @@
             font-size: 2rem;
             font-weight: bold;
             flex-shrink: 0;
+            padding: 0 0.5rem;
         }
 
         /* --- Task Table Sorting --- */
@@ -1200,96 +1201,96 @@
          */
         // Contains static data like dropdown options and glossary terms.
         const appData = {
-          "options": {
-            "status": ["Not Started", "Waiting", "In Progress", "At Risk", "Complete"],
-            "level": ["Low", "Medium", "High"],
-            "likelihood": ["Low", "Medium", "High"],
-            "impact": ["Low", "Medium", "High"],
-            "benefit": ["Low", "Medium", "High"],
-            "feasibility": ["Low", "Medium", "High"],
-            "itemType": ["Task / Activity", "Event", "Phase", "Milestone"],
-            "fidelityDimension": ["Adherence", "Dose", "Quality", "Participant Responsiveness"],
-            "adaptationNature": ["Tailoring", "Adding", "Removing", "Shortening", "Lengthening", "Substituting", "Reordering"],
-            "adaptationGoal": ["Increase Reach", "Improve Fit", "Decrease Costs", "Improve Effectiveness"],
-            "adaptationPlanned": ["Planned/Proactive", "Planned/Reactive", "Unplanned/Reactive"],
-            "contextLevels": ["Inner Setting", "Outer Setting", "Innovation Characteristics", "Characteristics of Individuals"]
-          },
-          "ericStrategies": [
-            { "name": "Access new funding", "definition": "Access new or existing money to facilitate the implementation." },
-            { "name": "Alter incentive/allowance structures", "definition": "Work to incentivize the adoption and implementation of the clinical innovation." },
-            { "name": "Alter patient/consumer fees", "definition": "Create fee structures where patients/consumers pay less for preferred treatments (the clinical innovation) and more for less-preferred treatments." },
-            { "name": "Assess for readiness and identify barriers and facilitators", "definition": "Assess various aspects of an organization to determine its degree of readiness to implement, barriers that may impede implementation, and strengths that can be used in the implementation effort." },
-            { "name": "Audit and provide feedback", "definition": "Collect and summarize clinical performance data over a specified time period and give it to clinicians and administrators to monitor, evaluate, and modify provider behavior." },
-            { "name": "Build a coalition", "definition": "Recruit and cultivate relationships with partners in the implementation effort." },
-            { "name": "Capture and share local knowledge", "definition": "Capture local knowledge from implementation sites on how implementers and clinicians made something work in their setting and then share it with other sites." },
-            { "name": "Centralize technical assistance", "definition": "Develop and use a centralized system to deliver technical assistance focused on implementation issues." },
-            { "name": "Change accreditation or membership requirements", "definition": "Strive to alter accreditation standards so that they require or encourage use of the clinical innovation. Work to alter membership organization requirements so that those who want to affiliate with the organization are encouraged or required to use the clinical innovation." },
-            { "name": "Change liability laws", "definition": "Participate in liability reform efforts that make clinicians more willing to deliver the clinical innovation." },
-            { "name": "Change physical structure and equipment", "definition": "Evaluate current configurations and adapt, as needed, the physical structure and/or equipment (e.g., changing the layout of a room, adding equipment) to best accommodate the targeted innovation." },
-            { "name": "Change record systems", "definition": "Change records systems to allow better assessment of implementation or clinical outcomes." },
-            { "name": "Change service sites", "definition": "Change the location of clinical service sites to increase access." },
-            { "name": "Conduct cyclical small tests of change", "definition": "Implement changes in a cyclical fashion using small tests of change before taking changes system-wide. Tests of change benefit from systematic measurement, and results of the tests of change are studied for insights on how to do better. This process continues serially over time, and refinement is added with each cycle." },
-            { "name": "Conduct educational meetings", "definition": "Hold meetings targeted toward different stakeholder groups (e.g., providers, administrators, other organizational stakeholders, and community, patient/consumer, and family stakeholders) to teach them about the clinical innovation." },
-            { "name": "Conduct educational outreach visits", "definition": "Have a trained person meet with providers in their practice settings to educate providers about the clinical innovation with the intent of changing the provider's practice." },
-            { "name": "Conduct local consensus discussions", "definition": "Include local providers and other stakeholders in discussions that address whether the chosen problem is important and whether the clinical innovation to address it is appropriate." },
-            { "name": "Conduct local needs assessment", "definition": "Collect and analyze data related to the need for the innovation." },
-            { "name": "Conduct ongoing training", "definition": "Plan for and conduct training in the clinical innovation in an ongoing way." },
-            { "name": "Create a learning collaborative", "definition": "Facilitate the formation of groups of providers or provider organizations and foster a collaborative learning environment to improve implementation of the clinical innovation." },
-            { "name": "Create new clinical teams", "definition": "Change who serves on the clinical team, adding different disciplines and different skills to make it more likely that the clinical innovation is delivered (or is more successfully delivered)." },
-            { "name": "Create or change credentialing and/or licensure standards", "definition": "Create an organization that certifies clinicians in the innovation or encourage an existing organization to do so. Change governmental professional certification or licensure requirements to include delivering the innovation. Work to alter continuing education requirements to shape professional practice toward the innovation." },
-            { "name": "Develop a formal implementation blueprint", "definition": "Develop a formal implementation blueprint that includes all goals and strategies. The blueprint should include the following: 1) aim/purpose of the implementation; 2) scope of the change (e.g., what organizational units are affected); 3) timeframe and milestones; and 4) appropriate performance/progress measures. Use and update this plan to guide the implementation effort over time." },
-            { "name": "Develop academic partnerships", "definition": "Partner with a university or academic unit for the purposes of shared training and bringing research skills to an implementation project." },
-            { "name": "Develop an implementation glossary", "definition": "Develop and distribute a list of terms describing the innovation, implementation, and stakeholders in the organizational change." },
-            { "name": "Develop and implement tools for quality monitoring", "definition": "Develop, test, and introduce into quality-monitoring systems the right input-the appropriate language, protocols, algorithms, standards, and measures (of processes patient/consumer outcomes, and implementation outcomes) that are often specific to the innovation being implemented." },
-            { "name": "Develop and organize quality monitoring systems", "definition": "Develop and organize systems and procedures that monitor clinical processes and/or outcomes for the purpose of quality assurance and improvement." },
-            { "name": "Develop disincentives", "definition": "Provide financial disincentives for failure to implement or use the clinical innovations." },
-            { "name": "Develop educational materials", "definition": "Develop and format manuals, toolkits, and other supporting materials in ways that make it easier for stakeholders to learn about the innovation and for clinicians to learn how to deliver the clinical innovation." },
-            { "name": "Develop resource sharing agreements", "definition": "Develop partnerships with organizations that have resources needed to implement the innovation." },
-            { "name": "Distribute educational materials", "definition": "Distribute educational materials (including guidelines, manuals, and toolkits) in person, by mail, and/or electronically." },
-            { "name": "Facilitate relay of clinical data to providers", "definition": "Provide as close to real-time data as possible about key measures of process/outcomes using integrated modes/channels of communication in a way that promotes use of the targeted innovation." },
-            { "name": "Facilitation", "definition": "A process of interactive problem solving and support that occurs in a context of a recognized need for improvement and a supportive interpersonal relationship." },
-            { "name": "Fund and contract for the clinical innovation", "definition": "Governments and other payers of services issue requests for proposals to deliver the innovation, use contracting processes to motivate providers to deliver the clinical innovation, and develop new funding formulas that make it more likely that providers will deliver the innovation." },
-            { "name": "Identify and prepare champions", "definition": "Identify and prepare individuals who dedicate themselves to supporting, marketing and driving through an implementation, overcoming indifference or resistance that the intervention may provoke in an organization." },
-            { "name": "Identify early adopters", "definition": "Identify early adopters at the local site to learn from their experiences with the practice innovation." },
-            { "name": "Increase demand", "definition": "Attempt to influence the market for the clinical innovation to increase competition intensity and to increase the maturity of the market for the clinical innovation." },
-            { "name": "Inform local opinion leaders", "definition": "Inform providers identified by colleagues as opinion leaders or 'educationally influential' about the clinical innovation in the hopes that they will influence colleagues to adopt it." },
-            { "name": "Intervene with patients/consumers to enhance uptake and adherence", "definition": "Develop strategies with patients to encourage and problem solve around adherence." },
-            { "name": "Involve executive boards", "definition": "Involve existing governing structures (e.g., boards of directors, medical staff boards of governance) in the implementation effort, including the review of data on implementation processes." },
-            { "name": "Involve patients/consumers and family members", "definition": "Engage or include patients/consumers and families in the implementation effort." },
-            { "name": "Make billing easier", "definition": "Make it easier to bill for the clinical innovation." },
-            { "name": "Make training dynamic", "definition": "Vary the information delivery methods to cater to different learning styles and work contexts, and shape the training in the innovation to be interactive." },
-            { "name": "Mandate change", "definition": "Have leadership declare the priority of the innovation and their determination to have it implemented." },
-            { "name": "Model and simulate change", "definition": "Model or simulate the change that will be implemented prior to implementation." },
-            { "name": "Obtain and use patients/consumers and family feedback", "definition": "Develop strategies to increase patient/consumer and family feedback on the implementation effort." },
-            { "name": "Obtain formal commitments", "definition": "Obtain written commitments from key partners that state what they will do to implement the innovation." },
-            { "name": "Organize clinician implementation team meetings", "definition": "Develop and support teams of clinicians who are implementing the innovation and give them protected time to reflect on the implementation effort, share lessons learned, and support one another's learning." },
-            { "name": "Place innovation on fee for service lists/formularies", "definition": "Work to place the clinical innovation on lists of actions for which providers can be reimbursed (e.g., a drug is placed on a formulary, a procedure is now reimbursable)." },
-            { "name": "Prepare patients/consumers to be active participants", "definition": "Prepare patients/consumers to be active in their care, to ask questions, and specifically to inquire about care guidelines, the evidence behind clinical decisions, or about available evidence-supported treatments." },
-            { "name": "Promote adaptability", "definition": "Identify the ways a clinical innovation can be tailored to meet local needs and clarify which elements of the innovation must be maintained to preserve fidelity." },
-            { "name": "Promote network weaving", "definition": "Identify and build on existing high-quality working relationships and networks within and outside the organization, organizational units, teams, etc. to promote information sharing, collaborative problem-solving, and a shared vision/goal related to implementing the innovation." },
-            { "name": "Provide clinical supervision", "definition": "Provide clinicians with ongoing supervision focusing on the innovation. Provide training for clinical supervisors who will supervise clinicians who provide the innovation." },
-            { "name": "Provide local technical assistance", "definition": "Develop and use a system to deliver technical assistance focused on implementation issues using local personnel." },
-            { "name": "Provide ongoing consultation", "definition": "Provide ongoing consultation with one or more experts in the strategies used to support implementing the innovation." },
-            { "name": "Purposely reexamine the implementation", "definition": "Monitor progress and adjust clinical practices and implementation strategies to continuously improve the quality of care." },
-            { "name": "Recruit, designate, and train for leadership", "definition": "Recruit, designate, and train leaders for the change effort." },
-            { "name": "Remind clinicians", "definition": "Develop reminder systems designed to help clinicians to recall information and/or prompt them to use the clinical innovation." },
-            { "name": "Revise professional roles", "definition": "Shift and revise roles among professionals who provide care, and redesign job characteristics." },
-            { "name": "Shadow other experts", "definition": "Provide ways for key individuals to directly observe experienced people engage with or use the targeted practice change/innovation." },
-            { "name": "Stage implementation scale up", "definition": "Phase implementation efforts by starting with small pilots or demonstration projects and gradually move to a system wide rollout." },
-            { "name": "Start a dissemination organization", "definition": "Identify or start a separate organization that is responsible for disseminating the clinical innovation. It could be a for-profit or non-profit organization." },
-            { "name": "Tailor strategies", "definition": "Tailor the implementation strategies to address barriers and leverage facilitators that were identified through earlier data collection." },
-            { "name": "Use advisory boards and workgroups", "definition": "Create and engage a formal group of multiple kinds of stakeholders to provide input and advice on implementation efforts and to elicit recommendations for improvements." },
-            { "name": "Use an implementation advisor", "definition": "Seek guidance from experts in implementation." },
-            { "name": "Use capitated payments", "definition": "Pay providers or care systems a set amount per patient/consumer for delivering clinical care." },
-            { "name": "Use data experts", "definition": "Involve, hire, and/or consult experts to inform management on the use of data generated by implementation efforts." },
-            { "name": "Use data warehousing techniques", "definition": "Integrate clinical records across facilities and organizations to facilitate implementation across systems." },
-            { "name": "Use mass media", "definition": "Use media to reach large numbers of people to spread the word about the clinical innovation." },
-            { "name": "Use other payment schemes", "definition": "Introduce payment approaches (in a catch-all category)." },
-            { "name": "Use train-the-trainer strategies", "definition": "Train designated clinicians or organizations to train others in the clinical innovation." },
-            { "name": "Visit other sites", "definition": "Visit sites where a similar implementation effort has been considered successful." },
-            { "name": "Work with educational institutions", "definition": "Encourage educational institutions to train clinicians in the innovation." }
-          ],
-          "allOutcomesData": {
+         "options": {
+             "status": ["Not Started", "Waiting", "In Progress", "At Risk", "Complete"],
+             "level": ["Low", "Medium", "High"],
+             "likelihood": ["Low", "Medium", "High"],
+             "impact": ["Low", "Medium", "High"],
+             "benefit": ["Low", "Medium", "High"],
+             "feasibility": ["Low", "Medium", "High"],
+             "itemType": ["Task / Activity", "Event", "Phase", "Milestone"],
+             "fidelityDimension": ["Adherence", "Dose", "Quality", "Participant Responsiveness"],
+             "adaptationNature": ["Tailoring", "Adding", "Removing", "Shortening", "Lengthening", "Substituting", "Reordering"],
+             "adaptationGoal": ["Increase Reach", "Improve Fit", "Decrease Costs", "Improve Effectiveness"],
+             "adaptationPlanned": ["Planned/Proactive", "Planned/Reactive", "Unplanned/Reactive"],
+             "contextLevels": ["Inner Setting", "Outer Setting", "Innovation Characteristics", "Characteristics of Individuals"]
+         },
+         "ericStrategies": [
+             { "name": "Access new funding", "definition": "Access new or existing money to facilitate the implementation." },
+             { "name": "Alter incentive/allowance structures", "definition": "Work to incentivize the adoption and implementation of the clinical innovation." },
+             { "name": "Alter patient/consumer fees", "definition": "Create fee structures where patients/consumers pay less for preferred treatments (the clinical innovation) and more for less-preferred treatments." },
+             { "name": "Assess for readiness and identify barriers and facilitators", "definition": "Assess various aspects of an organization to determine its degree of readiness to implement, barriers that may impede implementation, and strengths that can be used in the implementation effort." },
+             { "name": "Audit and provide feedback", "definition": "Collect and summarize clinical performance data over a specified time period and give it to clinicians and administrators to monitor, evaluate, and modify provider behavior." },
+             { "name": "Build a coalition", "definition": "Recruit and cultivate relationships with partners in the implementation effort." },
+             { "name": "Capture and share local knowledge", "definition": "Capture local knowledge from implementation sites on how implementers and clinicians made something work in their setting and then share it with other sites." },
+             { "name": "Centralize technical assistance", "definition": "Develop and use a centralized system to deliver technical assistance focused on implementation issues." },
+             { "name": "Change accreditation or membership requirements", "definition": "Strive to alter accreditation standards so that they require or encourage use of the clinical innovation. Work to alter membership organization requirements so that those who want to affiliate with the organization are encouraged or required to use the clinical innovation." },
+             { "name": "Change liability laws", "definition": "Participate in liability reform efforts that make clinicians more willing to deliver the clinical innovation." },
+             { "name": "Change physical structure and equipment", "definition": "Evaluate current configurations and adapt, as needed, the physical structure and/or equipment (e.g., changing the layout of a room, adding equipment) to best accommodate the targeted innovation." },
+             { "name": "Change record systems", "definition": "Change records systems to allow better assessment of implementation or clinical outcomes." },
+             { "name": "Change service sites", "definition": "Change the location of clinical service sites to increase access." },
+             { "name": "Conduct cyclical small tests of change", "definition": "Implement changes in a cyclical fashion using small tests of change before taking changes system-wide. Tests of change benefit from systematic measurement, and results of the tests of change are studied for insights on how to do better. This process continues serially over time, and refinement is added with each cycle." },
+             { "name": "Conduct educational meetings", "definition": "Hold meetings targeted toward different stakeholder groups (e.g., providers, administrators, other organizational stakeholders, and community, patient/consumer, and family stakeholders) to teach them about the clinical innovation." },
+             { "name": "Conduct educational outreach visits", "definition": "Have a trained person meet with providers in their practice settings to educate providers about the clinical innovation with the intent of changing the provider's practice." },
+             { "name": "Conduct local consensus discussions", "definition": "Include local providers and other stakeholders in discussions that address whether the chosen problem is important and whether the clinical innovation to address it is appropriate." },
+             { "name": "Conduct local needs assessment", "definition": "Collect and analyze data related to the need for the innovation." },
+             { "name": "Conduct ongoing training", "definition": "Plan for and conduct training in the clinical innovation in an ongoing way." },
+             { "name": "Create a learning collaborative", "definition": "Facilitate the formation of groups of providers or provider organizations and foster a collaborative learning environment to improve implementation of the clinical innovation." },
+             { "name": "Create new clinical teams", "definition": "Change who serves on the clinical team, adding different disciplines and different skills to make it more likely that the clinical innovation is delivered (or is more successfully delivered)." },
+             { "name": "Create or change credentialing and/or licensure standards", "definition": "Create an organization that certifies clinicians in the innovation or encourage an existing organization to do so. Change governmental professional certification or licensure requirements to include delivering the innovation. Work to alter continuing education requirements to shape professional practice toward the innovation." },
+             { "name": "Develop a formal implementation blueprint", "definition": "Develop a formal implementation blueprint that includes all goals and strategies. The blueprint should include the following: 1) aim/purpose of the implementation; 2) scope of the change (e.g., what organizational units are affected); 3) timeframe and milestones; and 4) appropriate performance/progress measures. Use and update this plan to guide the implementation effort over time." },
+             { "name": "Develop academic partnerships", "definition": "Partner with a university or academic unit for the purposes of shared training and bringing research skills to an implementation project." },
+             { "name": "Develop an implementation glossary", "definition": "Develop and distribute a list of terms describing the innovation, implementation, and stakeholders in the organizational change." },
+             { "name": "Develop and implement tools for quality monitoring", "definition": "Develop, test, and introduce into quality-monitoring systems the right input-the appropriate language, protocols, algorithms, standards, and measures (of processes patient/consumer outcomes, and implementation outcomes) that are often specific to the innovation being implemented." },
+             { "name": "Develop and organize quality monitoring systems", "definition": "Develop and organize systems and procedures that monitor clinical processes and/or outcomes for the purpose of quality assurance and improvement." },
+             { "name": "Develop disincentives", "definition": "Provide financial disincentives for failure to implement or use the clinical innovations." },
+             { "name": "Develop educational materials", "definition": "Develop and format manuals, toolkits, and other supporting materials in ways that make it easier for stakeholders to learn about the innovation and for clinicians to learn how to deliver the clinical innovation." },
+             { "name": "Develop resource sharing agreements", "definition": "Develop partnerships with organizations that have resources needed to implement the innovation." },
+             { "name": "Distribute educational materials", "definition": "Distribute educational materials (including guidelines, manuals, and toolkits) in person, by mail, and/or electronically." },
+             { "name": "Facilitate relay of clinical data to providers", "definition": "Provide as close to real-time data as possible about key measures of process/outcomes using integrated modes/channels of communication in a way that promotes use of the targeted innovation." },
+             { "name": "Facilitation", "definition": "A process of interactive problem solving and support that occurs in a context of a recognized need for improvement and a supportive interpersonal relationship." },
+             { "name": "Fund and contract for the clinical innovation", "definition": "Governments and other payers of services issue requests for proposals to deliver the innovation, use contracting processes to motivate providers to deliver the clinical innovation, and develop new funding formulas that make it more likely that providers will deliver the innovation." },
+             { "name": "Identify and prepare champions", "definition": "Identify and prepare individuals who dedicate themselves to supporting, marketing and driving through an implementation, overcoming indifference or resistance that the intervention may provoke in an organization." },
+             { "name": "Identify early adopters", "definition": "Identify early adopters at the local site to learn from their experiences with the practice innovation." },
+             { "name": "Increase demand", "definition": "Attempt to influence the market for the clinical innovation to increase competition intensity and to increase the maturity of the market for the clinical innovation." },
+             { "name": "Inform local opinion leaders", "definition": "Inform providers identified by colleagues as opinion leaders or 'educationally influential' about the clinical innovation in the hopes that they will influence colleagues to adopt it." },
+             { "name": "Intervene with patients/consumers to enhance uptake and adherence", "definition": "Develop strategies with patients to encourage and problem solve around adherence." },
+             { "name": "Involve executive boards", "definition": "Involve existing governing structures (e.g., boards of directors, medical staff boards of governance) in the implementation effort, including the review of data on implementation processes." },
+             { "name": "Involve patients/consumers and family members", "definition": "Engage or include patients/consumers and families in the implementation effort." },
+             { "name": "Make billing easier", "definition": "Make it easier to bill for the clinical innovation." },
+             { "name": "Make training dynamic", "definition": "Vary the information delivery methods to cater to different learning styles and work contexts, and shape the training in the innovation to be interactive." },
+             { "name": "Mandate change", "definition": "Have leadership declare the priority of the innovation and their determination to have it implemented." },
+             { "name": "Model and simulate change", "definition": "Model or simulate the change that will be implemented prior to implementation." },
+             { "name": "Obtain and use patients/consumers and family feedback", "definition": "Develop strategies to increase patient/consumer and family feedback on the implementation effort." },
+             { "name": "Obtain formal commitments", "definition": "Obtain written commitments from key partners that state what they will do to implement the innovation." },
+             { "name": "Organize clinician implementation team meetings", "definition": "Develop and support teams of clinicians who are implementing the innovation and give them protected time to reflect on the implementation effort, share lessons learned, and support one another's learning." },
+             { "name": "Place innovation on fee for service lists/formularies", "definition": "Work to place the clinical innovation on lists of actions for which providers can be reimbursed (e.g., a drug is placed on a formulary, a procedure is now reimbursable)." },
+             { "name": "Prepare patients/consumers to be active participants", "definition": "Prepare patients/consumers to be active in their care, to ask questions, and specifically to inquire about care guidelines, the evidence behind clinical decisions, or about available evidence-supported treatments." },
+             { "name": "Promote adaptability", "definition": "Identify the ways a clinical innovation can be tailored to meet local needs and clarify which elements of the innovation must be maintained to preserve fidelity." },
+             { "name": "Promote network weaving", "definition": "Identify and build on existing high-quality working relationships and networks within and outside the organization, organizational units, teams, etc. to promote information sharing, collaborative problem-solving, and a shared vision/goal related to implementing the innovation." },
+             { "name": "Provide clinical supervision", "definition": "Provide clinicians with ongoing supervision focusing on the innovation. Provide training for clinical supervisors who will supervise clinicians who provide the innovation." },
+             { "name": "Provide local technical assistance", "definition": "Develop and use a system to deliver technical assistance focused on implementation issues using local personnel." },
+             { "name": "Provide ongoing consultation", "definition": "Provide ongoing consultation with one or more experts in the strategies used to support implementing the innovation." },
+             { "name": "Purposely reexamine the implementation", "definition": "Monitor progress and adjust clinical practices and implementation strategies to continuously improve the quality of care." },
+             { "name": "Recruit, designate, and train for leadership", "definition": "Recruit, designate, and train leaders for the change effort." },
+             { "name": "Remind clinicians", "definition": "Develop reminder systems designed to help clinicians to recall information and/or prompt them to use the clinical innovation." },
+             { "name": "Revise professional roles", "definition": "Shift and revise roles among professionals who provide care, and redesign job characteristics." },
+             { "name": "Shadow other experts", "definition": "Provide ways for key individuals to directly observe experienced people engage with or use the targeted practice change/innovation." },
+             { "name": "Stage implementation scale up", "definition": "Phase implementation efforts by starting with small pilots or demonstration projects and gradually move to a system wide rollout." },
+             { "name": "Start a dissemination organization", "definition": "Identify or start a separate organization that is responsible for disseminating the clinical innovation. It could be a for-profit or non-profit organization." },
+             { "name": "Tailor strategies", "definition": "Tailor the implementation strategies to address barriers and leverage facilitators that were identified through earlier data collection." },
+             { "name": "Use advisory boards and workgroups", "definition": "Create and engage a formal group of multiple kinds of stakeholders to provide input and advice on implementation efforts and to elicit recommendations for improvements." },
+             { "name": "Use an implementation advisor", "definition": "Seek guidance from experts in implementation." },
+             { "name": "Use capitated payments", "definition": "Pay providers or care systems a set amount per patient/consumer for delivering clinical care." },
+             { "name": "Use data experts", "definition": "Involve, hire, and/or consult experts to inform management on the use of data generated by implementation efforts." },
+             { "name": "Use data warehousing techniques", "definition": "Integrate clinical records across facilities and organizations to facilitate implementation across systems." },
+             { "name": "Use mass media", "definition": "Use media to reach large numbers of people to spread the word about the clinical innovation." },
+             { "name": "Use other payment schemes", "definition": "Introduce payment approaches (in a catch-all category)." },
+             { "name": "Use train-the-trainer strategies", "definition": "Train designated clinicians or organizations to train others in the clinical innovation." },
+             { "name": "Visit other sites", "definition": "Visit sites where a similar implementation effort has been considered successful." },
+             { "name": "Work with educational institutions", "definition": "Encourage educational institutions to train clinicians in the innovation." }
+         ],
+         "allOutcomesData": {
               "Implementation Outcomes": [
                   { "name": "Acceptability", "definition": "The perception among implementation stakeholders that a given treatment, service, practice, or innovation is agreeable, palatable, or satisfactory." },
                   { "name": "Adoption", "definition": "The intention, initial decision, or action to try or employ an innovation or evidence-based practice." },
@@ -1342,6 +1343,7 @@
                 },
                 'log-landing': {
                     title: 'Implementation Log',
+                    horizontal: true,
                     cards: [
                         { module: 'adaptations', title: 'Adaptations', summary: 'The <b>Framework for Reporting Adaptations and Modifications to Evidence-based Implementation Strategies (FRAME-IS)</b> documents changes to the protocol (i.e., what was changed, why, and how).', stats: [{id: 'adaptations-count', label: 'Logged'}] },
                         { module: 'risks', title: 'Risks', summary: 'A structured log to capture potential <b>risks</b> to the implementation process, including their <i>impact</i> on implementation, <i>likelihood</i> of occurring, and space to develop <i>mitigation</i> strategies.', stats: [{id: 'risks-count', label: 'Logged'}, {id: 'high-impact-risks-count', label: 'High Impact'}] },
@@ -1371,18 +1373,97 @@
 
         /**
          * ----------------------------------------------------------------
+         * PRE-POPULATED DATA FOR DEMONSTRATION
+         * ----------------------------------------------------------------
+         */
+        function getPrepopulatedData() {
+            return {
+                simpleInputs: {
+                    "project-name": "Community Clinic HIV Prevention Protocol Rollout",
+                    "primary-goal": "To successfully implement the new HIV prevention protocol across 10 community clinics to improve patient outcomes and reduce HIV transmission rates, ensuring high fidelity despite adaptations to the training plan.",
+                    "ebp": "A new HIV prevention protocol that includes enhanced patient screening for risk factors, standardized provider counseling on Pre-Exposure Prophylaxis (PrEP), and a rapid linkage-to-care process for newly diagnosed individuals."
+                },
+                tables: {
+                    "team-members-table": [
+                        { name: "Dr. Anya Sharma", role: "Project Lead / Principal Investigator" },
+                        { name: "Marcus Thorne", role: "Clinical Training Specialist" },
+                        { name: "Elena Rodriguez", role: "Monitoring & Evaluation Lead" },
+                        { name: "David Chen", role: "Clinic Champion - Site A" }
+                    ],
+                    "determinants-container": [
+                        { determinant: "Clinic staff shortages", context: "Inner Setting", notes: "A primary driver for adapting the training. Clinics are understaffed, making it impossible to pull staff for two half-day sessions." },
+                        { determinant: "COVID-19 health and safety precautions", context: "Outer Setting", notes: "External public health guidelines discourage large in-person gatherings, necessitating a virtual format." },
+                        { determinant: "Variable staff digital literacy and 'Zoom fatigue'", context: "Characteristics of Individuals", notes: "A potential barrier to engagement and knowledge retention in a virtual format. Some staff are less comfortable with technology." },
+                        { determinant: "Strong, evidence-based protocol", context: "Innovation Characteristics", notes: "The protocol's clear benefits for patient care can act as a facilitator, motivating staff to adopt it despite training challenges." }
+                    ],
+                    "strategies-container": [
+                        { strategy: "Conduct ongoing training", determinants: "Clinic staff shortages (Inner Setting)", mechanism: "The virtual webinar format is a form of ongoing (adapted) training that respects staff time constraints, thereby increasing knowledge and skills without overburdening the clinics." },
+                        { strategy: "Develop educational materials", determinants: "Clinic staff shortages (Inner Setting)", mechanism: "Providing concise, easily-digestible handouts via email allows for asynchronous learning, reinforcing knowledge from the webinar at a time convenient for the staff." },
+                        { strategy: "Centralize technical assistance", determinants: "Variable staff digital literacy (Characteristics of Individuals)", mechanism: "Having a designated tech support contact for the webinar increases staff confidence and ability to participate (self-efficacy), ensuring technology is not a barrier to learning." },
+                        { strategy: "Identify and prepare champions", determinants: "Potential for low engagement (Inner Setting)", mechanism: "Local champions build trust and reinforce the perceived value of the new protocol among their peers, fostering a positive implementation climate." }
+                    ],
+                    "mechanisms-container": [
+                        { mechanism: "Increased Knowledge & Skills", description: "The webinar and handouts will directly transmit essential information about the new HIV prevention protocol, improving staff's ability to perform the required tasks." },
+                        { mechanism: "Increased Self-Efficacy", description: "By providing clear instructions, accessible tech support, and champion encouragement, staff will feel more confident in their ability to successfully implement the new protocol despite the brief training." },
+                        { mechanism: "Improved Perceived Value", description: "Champions will help contextualize the protocol's importance for their specific clinic and patients, leading to greater buy-in and a belief that the effort is worthwhile." }
+                    ],
+                    "implementation-outcomes-container": [
+                        { outcome: "Acceptability", metric: "Staff rate the virtual training as 'agreeable' or 'very agreeable' on a post-training survey.", stakeholder: "Clinic Staff", source: "Post-Webinar Survey", owner: "Elena Rodriguez", date: "2025-07-25" },
+                        { outcome: "Feasibility", metric: "90% of clinic staff successfully attend the webinar and download the materials.", stakeholder: "Clinic Staff", source: "Webinar Attendance Logs", owner: "Marcus Thorne", date: "2025-07-22" },
+                        { outcome: "Fidelity", metric: "Achieve >80% adherence on core protocol components within 3 months post-training.", stakeholder: "Clinic Staff", source: "Quarterly Chart Audits", owner: "Elena Rodriguez", date: "2025-10-31" }
+                    ],
+                    "service-outcomes-container": [
+                        { outcome: "Effectiveness", metric: "25% increase in PrEP prescriptions for eligible patients within 6 months.", source: "EHR Data", target: "25% increase", frequency: "Quarterly" },
+                        { outcome: "Timeliness", metric: "Reduce average time from positive HIV test to linkage-to-care appointment to < 48 hours.", source: "Patient Referral Logs", target: "< 48 hours", frequency: "Monthly" }
+                    ],
+                    "client-outcomes-container": [
+                        { outcome: "Satisfaction", metric: "Maintain a client satisfaction score of >4.5/5 on questions related to prevention services.", population: "All clinic patients receiving prevention services", target: ">4.5 / 5", collection_points: "Quarterly surveys" },
+                        { outcome: "Symptomatology", metric: "Contribute to a 5% reduction in new HIV diagnoses in the clinic's service area over 2 years.", population: "Service Area Population", target: "5% reduction", collection_points: "Annual Public Health Data" }
+                    ],
+                    "timeline-container": [
+                        { task: "Develop webinar content and handouts", start: "2025-07-01", end: "2025-07-15", owner: "Marcus Thorne", status: "Complete", progress: "100", notes: "Content adapted for 90-min format. Handouts created as PDF." },
+                        { task: "Schedule and conduct 90-minute webinar", start: "2025-07-16", end: "2025-07-22", owner: "Dr. Anya Sharma", status: "In Progress", progress: "50", notes: "Scheduled for 7/22. Invites sent." },
+                        { task: "Distribute post-webinar survey", start: "2025-07-22", end: "2025-07-29", owner: "Elena Rodriguez", status: "Not Started", progress: "0", notes: "Survey created in SurveyMonkey." },
+                        { task: "Champions conduct first follow-up at clinics", start: "2025-07-29", end: "2025-08-05", owner: "David Chen", status: "Not Started", progress: "0", notes: "Focus on reviewing handouts and answering questions." }
+                    ],
+                    "fidelity-plan-container": [
+                        { component: "Routine HIV screening for all eligible patients", function: "To identify new infections early", dimension: "Adherence", method: "Quarterly chart audit", target: "95% of eligible patients offered screening" },
+                        { component: "Offer PrEP counseling to all high-risk patients", function: "To prevent new infections in vulnerable populations", dimension: "Adherence", method: "Quarterly chart audit", target: "90% of high-risk patients have documented counseling" },
+                        { component: "Complete linkage-to-care referral within 24 hours", function: "To ensure rapid access to treatment and support", dimension: "Quality", method: "Review of referral logs", target: "100% of referrals made within 24-hour window" }
+                    ],
+                    "instruments-container": [
+                        { instrument: "Post-Webinar Knowledge Quiz", construct: "Staff Knowledge of Protocol", source: "Internal SurveyMonkey Link", notes: "10 multiple-choice questions covering core components. Administered immediately after webinar." },
+                        { instrument: "Acceptability of Intervention Measure (AIM)", construct: "Acceptability", source: "Standardized Scale Citation", notes: "Administered 1 week post-webinar to gauge perceptions of the virtual training." },
+                        { instrument: "Fidelity Audit Checklist", construct: "Fidelity", source: "Internal Document", notes: "Used for quarterly chart audits. Based on the core components defined in the fidelity plan." }
+                    ],
+                    "adaptations-container": [
+                        { modification: "Shifted training from in-person to virtual webinar", date: "2025-06-15", component: "Conduct ongoing training", nature: "Substituting", goal: "Improve Fit", planned: "Planned/Reactive", decisionMakers: "Project Team", decisionRationale: "Decision made in response to clinic-reported staff shortages and ongoing COVID-19 precautions making in-person sessions infeasible." },
+                        { modification: "Reduced training time to one 90-minute session", date: "2025-06-18", component: "Conduct ongoing training", nature: "Shortening", goal: "Improve Fit", planned: "Planned/Reactive", decisionMakers: "Project Team, Clinical Trainer", decisionRationale: "To maximize attendance and minimize disruption to clinic operations, the training was condensed to the most critical elements." },
+                        { modification: "Supplemented webinar with email handouts", date: "2025-06-20", component: "Develop educational materials", nature: "Adding", goal: "Improve Effectiveness", planned: "Planned/Reactive", decisionMakers: "Clinical Trainer", decisionRationale: "To compensate for the reduced live training time, key information, checklists, and scripts were provided as take-away resources for asynchronous review." }
+                    ],
+                    "risks-container": [
+                        { risk: "Reduced knowledge transfer due to shorter format", start: "2025-06-18", likelihood: "High", impact: "High", cost: "0", mitigation: "Implement mandatory post-webinar knowledge quiz. Use champions to follow up and reinforce key concepts.", notes: "The biggest risk of the adaptation. If staff don't learn the protocol, fidelity will be low." },
+                        { risk: "Technical difficulties during live webinar", start: "2025-07-01", likelihood: "Medium", impact: "Medium", cost: "0", mitigation: "Have a dedicated tech support person on the call. Record the session and distribute to anyone who was unable to connect.", notes: "Potential to disrupt learning for a subset of staff." },
+                        { risk: "Staff do not read supplementary handouts", start: "2025-06-20", likelihood: "High", impact: "Medium", cost: "0", mitigation: "Champions will review handouts during huddles. Key checklists from handouts will be integrated into the EHR.", notes: "Email fatigue is common. The information needs to be pushed through multiple channels." }
+                    ],
+                    "opportunities-container": [
+                        { opportunity: "Webinar recording can be used for new hire training", start: "2025-07-22", benefit: "High", feasibility: "High", affected: "50", notes: "The recorded session provides a standardized, reusable training asset, reducing future training costs and effort." },
+                        { opportunity: "Cost savings from travel can be reallocated", start: "2025-06-15", benefit: "Medium", feasibility: "High", affected: "1000", notes: "Funds originally budgeted for travel and venue rental (~$5000) can be repurposed for developing enhanced patient-facing educational materials about HIV prevention." }
+                    ]
+                }
+            };
+        }
+
+        /**
+         * ----------------------------------------------------------------
          * INITIALIZATION
          * ----------------------------------------------------------------
          */
         function initializeApp() {
             console.log("Initializing application...");
             buildPageTemplates();
-            // Check if there's saved data. If not, populate with the example.
-            if (!localStorage.getItem('implementationPlanData')) {
-                populateWithExampleData();
-            } else {
-                loadPlanFromLocalStorage();
-            }
+            // Instead of loading from localStorage, we'll load the prepopulated data
+            loadPrepopulatedData();
             setupEventListeners();
             navigateTo('overview-landing', true);
             console.log("Application initialized.");
@@ -1441,7 +1522,7 @@
                             <div class="planning-module summary-section">
                                 <div class="planning-module-header"><h4>Performance Dashboard</h4><p>An overview of key performance indicators and project progress.</p></div>
                                 <div class="planning-module-content">
-                                    <div id="report-kpi-container"><div class="kpi-grid"></div></div>
+                                    <div id="report-kpi-container" class="horizontal-scroll-container"></div>
                                     <div class="chart-card progress-card" style="margin-top: 2rem;">
                                         <h5>Activities Progress</h5>
                                         <div id="progress-bar-container" class="progress-bar-container"></div>
@@ -1496,69 +1577,9 @@
 
         /**
          * ----------------------------------------------------------------
-         * DATA PERSISTENCE
+         * DATA PERSISTENCE (LOCAL STORAGE)
          * ----------------------------------------------------------------
          */
-
-        function populateWithExampleData() {
-            // Clear any existing data
-            localStorage.removeItem('implementationPlanData');
-            
-            // Set simple inputs
-            document.getElementById('project-name').value = 'HIV Prevention Protocol Implementation';
-            document.getElementById('primary-goal').value = 'To successfully roll out the new HIV prevention protocol across 10 community clinics, ensuring high fidelity and staff competency.';
-            document.getElementById('ebp').value = 'A new evidence-based protocol for HIV prevention, including updated testing guidelines and patient counseling techniques.';
-
-            // Example Data
-            const exampleData = {
-                'team-members-table': [
-                    { name: 'Dr. Anya Sharma', role: 'Project Lead' },
-                    { name: 'Ben Carter', role: 'Training Coordinator' },
-                    { name: 'Maria Garcia', role: 'Data Manager' }
-                ],
-                'determinants-container': [
-                    { determinant: 'Staff shortages at clinics', context: 'Inner Setting', notes: 'High turnover and difficulty in hiring have led to understaffed clinics.' },
-                    { determinant: 'COVID-19 precautions and restrictions', context: 'Outer Setting', notes: 'Ongoing public health measures limit in-person gatherings.' },
-                    { determinant: 'Limited staff time for training', context: 'Inner Setting', notes: 'Clinicians cannot be pulled from patient care for extended periods.' }
-                ],
-                'strategies-container': [
-                    { strategy: 'Conduct educational meetings', determinants: 'Staff shortages (Inner Setting)', mechanism: 'Increase knowledge and self-efficacy' },
-                    { strategy: 'Develop educational materials', determinants: 'Limited staff time for training (Inner Setting)', mechanism: 'Provide accessible reference materials' },
-                    { strategy: 'Promote adaptability', determinants: 'COVID-19 precautions (Outer Setting)', mechanism: 'Allow for necessary modifications to the implementation plan' }
-                ],
-                'fidelity-plan-container': [
-                    { component: 'Staff Training Delivery', function: 'Ensure staff competency in the new protocol', dimension: 'Quality', method: 'Post-webinar knowledge check', target: '>90% score' }
-                ],
-                'adaptations-container': [
-                    { 
-                        modification: 'Adapted training from in-person to virtual',
-                        date: new Date().toISOString().split('T')[0], // Today's date
-                        component: 'Staff Training Delivery',
-                        nature: 'Substituting',
-                        goal: 'Improve Fit',
-                        planned: 'Unplanned/Reactive',
-                        decisionMakers: 'Project Team, Clinic Leads',
-                        decisionRationale: 'Due to staff shortages and COVID-19 precautions, the original two half-day in-person sessions were not feasible. A 90-minute webinar was more accessible for all staff.'
-                    }
-                ],
-                'timeline-container': [
-                    { task: 'Develop webinar training materials', start: '2025-07-01', end: '2025-07-15', owner: 'Ben Carter', status: 'Complete', progress: '100' },
-                    { task: 'Schedule webinar with 10 clinics', start: '2025-07-16', end: '2025-07-22', owner: 'Ben Carter', status: 'In Progress', progress: '50' },
-                    { task: 'Conduct webinar training', start: '2025-07-25', end: '2025-07-25', owner: 'Dr. Anya Sharma', status: 'Not Started', progress: '0' },
-                    { task: 'Distribute supplemental email handouts', start: '2025-07-26', end: '2025-07-26', owner: 'Ben Carter', status: 'Not Started', progress: '0' },
-                    { task: 'Collect post-training feedback surveys', start: '2025-07-26', end: '2025-08-05', owner: 'Maria Garcia', status: 'Not Started', progress: '0' }
-                ]
-            };
-
-            // Populate tables and containers
-            for (const [containerId, data] of Object.entries(exampleData)) {
-                data.forEach(item => addRow(containerId, item));
-            }
-
-            // Save this example data to local storage so it persists
-            triggerSave();
-        }
-
         function getPlanData() {
             const data = { simpleInputs: {}, tables: {} };
             document.querySelectorAll('.saveable').forEach(input => {
@@ -1591,42 +1612,33 @@
         function savePlanToLocalStorage() {
             try {
                 localStorage.setItem('implementationPlanData', JSON.stringify(getPlanData()));
+                console.log("Plan saved to Local Storage.");
             } catch (error) {
                 console.error("Error saving to Local Storage: ", error);
             }
         }
 
-        function loadPlanFromLocalStorage() {
+        function loadPrepopulatedData() {
+            const planData = getPrepopulatedData();
+            console.log("Loading prepopulated data.");
+            if (planData.simpleInputs) {
+                Object.entries(planData.simpleInputs).forEach(([id, value]) => {
+                    const input = document.getElementById(id);
+                    if (input) input.value = value;
+                });
+            }
+            if (planData.tables) {
+                Object.entries(planData.tables).forEach(([tableId, tableData]) => {
+                    (tableData || []).forEach(rowData => addRow(tableId, rowData));
+                });
+            }
+            
             const allContainerSelectors = [
                 '#team-members-table tbody', '#determinants-container', '#strategies-container', '#mechanisms-container',
                 '#risks-container', '#opportunities-container', '#timeline-container',
                 '#implementation-outcomes-container', '#service-outcomes-container', '#client-outcomes-container',
                 '#fidelity-plan-container', '#adaptations-container', '#instruments-container'
             ];
-            allContainerSelectors.forEach(selector => {
-                const el = document.querySelector(selector);
-                if (el) el.innerHTML = '';
-            });
-
-            const savedData = localStorage.getItem('implementationPlanData');
-            if (savedData) {
-                console.log("Loading plan from Local Storage.");
-                const planData = JSON.parse(savedData);
-                if (planData.simpleInputs) {
-                    Object.entries(planData.simpleInputs).forEach(([id, value]) => {
-                        const input = document.getElementById(id);
-                        if (input) input.value = value;
-                    });
-                }
-                if (planData.tables) {
-                    Object.entries(planData.tables).forEach(([tableId, tableData]) => {
-                        (tableData || []).forEach(rowData => addRow(tableId, rowData));
-                    });
-                }
-            } else {
-                console.log("No saved plan found. Initializing new template.");
-            }
-            
             allContainerSelectors.forEach(selector => updateEmptyState(selector.replace('#', '').split(' ')[0]));
             updateSidebarTitle();
             updateAllDashboards();
@@ -1732,6 +1744,11 @@
 
             const keyField = containerKeyMap[containerId];
             const container = document.getElementById(containerId);
+            // FIX: Add a null check for the container to prevent the error.
+            if (!container) {
+                console.error(`Container with ID "${containerId}" not found.`);
+                return;
+            }
             const rowSelector = container.tagName === 'TABLE' ? 'tbody tr' : '.expandable-row, .expandable-card';
             
             if (keyField) {
@@ -1787,7 +1804,7 @@
             
             const outcomeInputs = newRowElement.querySelectorAll('.outcome-search-input');
             outcomeInputs.forEach(input => {
-                const parentContainerId = input.closest('.expandable-rows-container').id;
+                const parentContainerId = containerId; // FIX: Use the containerId passed to the function
                 let sourceData;
                 if (parentContainerId.includes('implementation')) sourceData = appData.allOutcomesData['Implementation Outcomes'];
                 else if (parentContainerId.includes('service')) sourceData = appData.allOutcomesData['Service Outcomes'];
@@ -1844,8 +1861,7 @@
         function initializeFlippableCards() {
             document.querySelectorAll('.module-front-matter').forEach(card => {
                 card.addEventListener('click', (e) => {
-                    if (e.target.closest('.card-face-back a, .card-face-back button')) return;
-                    
+                    if (e.target.closest('a, button')) return;
                     const flipper = card.querySelector('.card-flipper');
                     if (flipper) {
                         flipper.classList.toggle('is-flipped');
@@ -1881,11 +1897,11 @@
             if (!config) return;
 
             let content = `<h4 class="card-back-title">${config.title}</h4>`;
-            const validData = config.data?.filter(item => item && item[config.key] && item[config.key].trim());
+            const validData = config.data?.filter(item => item && item[config.key]);
             
             if (validData && validData.length > 0) {
                  if (module === 'summary') {
-                     content += `<div class="card-back-empty"><button class="add-row-btn nav-link" data-target="${config.page}">${config.buttonText}</button></div>`;
+                       content += `<div class="card-back-empty"><button class="add-row-btn nav-link" data-target="${config.page}">${config.buttonText}</button></div>`;
                  } else {
                     content += `<ul class="card-back-list">${validData.map((item, index) => `<li><a href="#" class="nav-link" data-target="${config.page}" data-item-index="${index}">${item[config.key]}</a></li>`).join('')}</ul>`;
                  }
@@ -1982,10 +1998,15 @@
             const tasks = (planData.tables['timeline-container'] || []).filter(t => t.task && t.task.trim() !== '');
             const completedTasks = tasks.filter(t => t.status === 'Complete').length;
             const overdueTasks = tasks.filter(t => t.status !== 'Complete' && t.end && new Date(t.end) < new Date()).length;
+            const overdueColor = overdueTasks > 0 ? 'var(--red)' : 'var(--green)';
+
             const tcc = document.getElementById('tasks-complete-count');
             if (tcc) tcc.textContent = completedTasks;
             const toc = document.getElementById('tasks-overdue-count');
-            if(toc) toc.textContent = overdueTasks;
+            if(toc) {
+                toc.textContent = overdueTasks;
+                toc.style.color = overdueColor;
+            }
 
             const risks = (planData.tables['risks-container'] || []).filter(r => r.risk && r.risk.trim() !== '');
             const highImpactRisks = risks.filter(r => r.impact === 'High').length;
@@ -2002,7 +2023,10 @@
             const rpk = document.getElementById('report-progress-kpi');
             if (rpk) rpk.textContent = `${progress}%`;
             const rok = document.getElementById('report-overdue-kpi');
-            if (rok) rok.textContent = overdueTasks;
+            if (rok) {
+                rok.textContent = overdueTasks;
+                rok.style.color = overdueColor;
+            }
             const rrk = document.getElementById('report-risks-kpi');
             if(rrk) rrk.textContent = highImpactRisks;
         }
@@ -2013,19 +2037,21 @@
             const risks = (planData.tables['risks-container'] || []).filter(r => r.risk && r.risk.trim() !== '');
             const opportunities = (planData.tables['opportunities-container'] || []).filter(o => o.opportunity && o.opportunity.trim() !== '');
 
-            const kpiContainer = document.querySelector('#summary .kpi-grid');
+            const kpiContainer = document.querySelector('#summary #report-kpi-container');
             if(kpiContainer) {
                 const totalTasks = tasks.length;
                 const completedTasks = tasks.filter(t => t.status === 'Complete').length;
                 const progress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
                 const overdueTasks = tasks.filter(t => t.status !== 'Complete' && t.end && new Date(t.end) < new Date()).length;
                 const highImpactRisks = risks.filter(r => r.impact === 'High').length;
+                const highBenefitOpps = opportunities.filter(o => o.benefit === 'High').length;
+                const overdueColor = overdueTasks > 0 ? 'var(--red)' : 'var(--green)';
                 
                 kpiContainer.innerHTML = `
-                    <div class="kpi-card"><div class="kpi-title">Progress</div><div class="kpi-value">${progress}%</div></div>
-                    <div class="kpi-card"><div class="kpi-title">Tasks Overdue</div><div class="kpi-value">${overdueTasks}</div></div>
-                    <div class="kpi-card"><div class="kpi-title">High-Impact Risks</div><div class="kpi-value">${highImpactRisks}</div></div>
-                    <div class="kpi-card"><div class="kpi-title">Total Tasks</div><div class="kpi-value">${totalTasks}</div></div>
+                    <div class="kpi-card" style="flex: 0 0 200px;"><div class="kpi-title">Progress</div><div class="kpi-value">${progress}%</div></div>
+                    <div class="kpi-card" style="flex: 0 0 200px;"><div class="kpi-title">Tasks Overdue</div><div class="kpi-value" style="color: ${overdueColor};">${overdueTasks}</div></div>
+                    <div class="kpi-card" style="flex: 0 0 200px;"><div class="kpi-title">High-Impact Risks</div><div class="kpi-value">${highImpactRisks}</div></div>
+                    <div class="kpi-card" style="flex: 0 0 200px;"><div class="kpi-title">High-Benefit Opportunities</div><div class="kpi-value">${highBenefitOpps}</div></div>
                 `;
             }
             
@@ -2092,6 +2118,9 @@
             }
             const finalLabel = pluralLabelKey.charAt(0).toUpperCase() + pluralLabelKey.slice(1);
 
+            const isOppChart = canvasId === 'opportunities-chart';
+            const bgColor = isOppChart ? 'rgba(46, 125, 50, 0.6)' : 'rgba(192, 4, 4, 0.6)';
+            const bdColor = isOppChart ? 'rgba(46, 125, 50, 1)' : 'rgba(192, 4, 4, 1)';
 
             const levelMap = { 'Low': 1, 'Medium': 2, 'High': 3 };
             const chartData = {
@@ -2103,8 +2132,8 @@
                         r: item[rKey] ? Math.max(5, Math.log(parseFloat(item[rKey]) + 1) * 4) : 5,
                         label: item[labelKey]
                     })).filter(d => d.x > 0 && d.y > 0),
-                    backgroundColor: 'rgba(192, 4, 4, 0.6)',
-                    borderColor: 'rgba(192, 4, 4, 1)',
+                    backgroundColor: bgColor,
+                    borderColor: bdColor,
                 }]
             };
             
@@ -2127,6 +2156,11 @@
                         }
                     },
                     plugins: {
+                        legend: {
+                            labels: {
+                                usePointStyle: true,
+                            }
+                        },
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
@@ -2196,8 +2230,9 @@
                     const targetId = navLink.dataset.target;
                     const itemIndex = navLink.dataset.itemIndex;
                     
+                    navigateTo(targetId, false, itemIndex);
+
                     if (navLink.classList.contains('add-item-from-card')) {
-                        navigateTo(targetId);
                         const pageConfig = state.pageConfig[targetId];
                         const containerId = pageConfig?.containerId;
                         
@@ -2210,8 +2245,6 @@
                                 addRow(firstContainer.id);
                             }
                         }
-                    } else if (targetId) {
-                        navigateTo(targetId, false, itemIndex);
                     }
                 }
 
