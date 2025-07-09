@@ -356,6 +356,18 @@
             color: var(--brown);
             font-size: 1.2rem;
         }
+        
+        h5.card-back-group-header {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin: 1.25rem 0 0.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        .card-back-title + h5.card-back-group-header {
+            margin-top: 0.5rem;
+        }
 
         strong, label {
             color: var(--brown);
@@ -834,7 +846,7 @@
     <div class="app-layout">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2 id="sidebar-title">New Project</h2>
+                <h2 id="sidebar-title">HIV Prevention Protocol Implementation</h2>
             </div>
             <ul class="sidebar-nav">
                 <li>
@@ -883,21 +895,20 @@
         </aside>
 
         <main class="main-content">
-            <!-- All content sections will be injected here from templates -->
             <div id="overview-landing" class="content-section active">
                 <div class="content-card">
                     <h3>Project Overview</h3>
                     <div class="form-group">
                         <label for="project-name">Title:</label>
-                        <input type="text" id="project-name" class="saveable" placeholder="Enter a name for the project or initiative."/>
+                        <input type="text" id="project-name" class="saveable" placeholder="Enter a name for the project or initiative." value="HIV Prevention Protocol Implementation"/>
                     </div>
                     <div class="form-group">
                         <label for="primary-goal">Primary Goal:</label>
-                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort."></textarea>
+                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To successfully implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency in the new workflows.</textarea>
                     </div>
                     <div class="form-group">
                         <label for="ebp">Evidence-Based Practice (EBP) or Initiative:</label>
-                        <textarea id="ebp" class="saveable" placeholder="Describe the core intervention or practice being implemented."></textarea>
+                        <textarea id="ebp" class="saveable" placeholder="Describe the core intervention or practice being implemented.">A new evidence-based protocol for routine HIV screening and linkage to prevention services (including PrEP/PEP) for at-risk patient populations in a community clinic setting. This involves updated clinical workflows, new EHR templates, and patient education materials.</textarea>
                     </div>
                     <div class="form-group">
                         <label>Team & Roles:</label>
@@ -932,7 +943,6 @@
         </main>
     </div>
 
-    <!-- All HTML templates are below -->
     <template id="team-members-table-template">
         <tr>
             <td data-label="Name"><input type="text" data-field="name" placeholder="Full Name"></td>
@@ -1222,7 +1232,7 @@
                 "adaptationNature": ["Tailoring", "Adding", "Removing", "Shortening", "Lengthening", "Substituting", "Reordering"],
                 "adaptationGoal": ["Increase Reach", "Improve Fit", "Decrease Costs", "Improve Effectiveness"],
                 "adaptationPlanned": ["Planned/Proactive", "Planned/Reactive", "Unplanned/Reactive"],
-                "contextLevels": ["Inner Setting", "Outer Setting", "Innovation Characteristics", "Characteristics of Individuals"]
+                "contextLevels": ["Innovation Characteristics", "Outer Setting", "Inner Setting", "Characteristics of Individuals"]
             },
             "ericStrategies": [
                 { "name": "Access new funding", "definition": "Access new or existing money to facilitate the implementation." },
@@ -1300,29 +1310,29 @@
                 { "name": "Work with educational institutions", "definition": "Encourage educational institutions to train clinicians in the innovation." }
             ],
             "allOutcomesData": {
-                  "Implementation Outcomes": [
-                      { "name": "Acceptability", "definition": "The perception among implementation stakeholders that a given treatment, service, practice, or innovation is agreeable, palatable, or satisfactory." },
-                      { "name": "Adoption", "definition": "The intention, initial decision, or action to try or employ an innovation or evidence-based practice." },
-                      { "name": "Appropriateness", "definition": "The perceived fit, relevance, or compatibility of the innovation or evidence based practice for a given practice setting, provider, or consumer; and/or perceived fit of the innovation to address a particular issue or problem." },
-                      { "name": "Feasibility", "definition": "The extent to which a new treatment, or an innovation, can be successfully used or carried out within a given agency or setting." },
-                      { "name": "Fidelity", "definition": "The degree to which an intervention was implemented as it was prescribed in the original protocol or as it was intended by the program developers." },
-                      { "name": "Implementation Cost", "definition": "The cost impact of an implementation effort." },
-                      { "name": "Penetration", "definition": "The integration of a practice within a service setting and its subsystems." },
-                      { "name": "Sustainability", "definition": "The extent to which a newly implemented treatment is maintained or institutionalized within a service setting’s ongoing, stable operations." }
-                  ],
-                  "Service Outcomes": [
-                      { "name": "Efficiency", "definition": "The extent to which a service achieves its outcomes with the minimal expenditure of resources." },
-                      { "name": "Safety", "definition": "The extent to which a service minimizes the risk of harm to consumers." },
-                      { "name": "Effectiveness", "definition": "The extent to which a service achieves its intended outcomes when delivered in real-world settings." },
-                      { "name": "Equity", "definition": "The extent to which a service is delivered in a way that is fair and just, without disparities based on patient characteristics." },
-                      { "name": "Patient-centeredness", "definition": "The extent to which a service is respectful of and responsive to individual patient preferences, needs, and values." },
-                      { "name": "Timeliness", "definition": "The extent to which a service is provided to consumers in a timely manner, reducing waits and harmful delays." }
-                  ],
-                  "Client Outcomes": [
-                      { "name": "Satisfaction", "definition": "The client's level of contentment with the services received." },
-                      { "name": "Function", "definition": "The impact of a service on a client's ability to perform daily activities and roles." },
-                      { "name": "Symptomatology", "definition": "The effect of a service on a client's symptoms and signs of illness." }
-                  ]
+                "Implementation Outcomes": [
+                    { "name": "Acceptability", "definition": "The perception among implementation stakeholders that a given treatment, service, practice, or innovation is agreeable, palatable, or satisfactory." },
+                    { "name": "Adoption", "definition": "The intention, initial decision, or action to try or employ an innovation or evidence-based practice." },
+                    { "name": "Appropriateness", "definition": "The perceived fit, relevance, or compatibility of the innovation or evidence based practice for a given practice setting, provider, or consumer; and/or perceived fit of the innovation to address a particular issue or problem." },
+                    { "name": "Feasibility", "definition": "The extent to which a new treatment, or an innovation, can be successfully used or carried out within a given agency or setting." },
+                    { "name": "Fidelity", "definition": "The degree to which an intervention was implemented as it was prescribed in the original protocol or as it was intended by the program developers." },
+                    { "name": "Implementation Cost", "definition": "The cost impact of an implementation effort." },
+                    { "name": "Penetration", "definition": "The integration of a practice within a service setting and its subsystems." },
+                    { "name": "Sustainability", "definition": "The extent to which a newly implemented treatment is maintained or institutionalized within a service setting’s ongoing, stable operations." }
+                ],
+                "Service Outcomes": [
+                    { "name": "Efficiency", "definition": "The extent to which a service achieves its outcomes with the minimal expenditure of resources." },
+                    { "name": "Safety", "definition": "The extent to which a service minimizes the risk of harm to consumers." },
+                    { "name": "Effectiveness", "definition": "The extent to which a service achieves its intended outcomes when delivered in real-world settings." },
+                    { "name": "Equity", "definition": "The extent to which a service is delivered in a way that is fair and just, without disparities based on patient characteristics." },
+                    { "name": "Patient-centeredness", "definition": "The extent to which a service is respectful of and responsive to individual patient preferences, needs, and values." },
+                    { "name": "Timeliness", "definition": "The extent to which a service is provided to consumers in a timely manner, reducing waits and harmful delays." }
+                ],
+                "Client Outcomes": [
+                    { "name": "Satisfaction", "definition": "The client's level of contentment with the services received." },
+                    { "name": "Function", "definition": "The impact of a service on a client's ability to perform daily activities and roles." },
+                    { "name": "Symptomatology", "definition": "The effect of a service on a client's symptoms and signs of illness." }
+                ]
             }
         };
 
@@ -1388,13 +1398,114 @@
         function initializeApp() {
             console.log("Initializing application...");
             buildPageTemplates();
-            // Directly inject the use case data instead of loading from local storage
-            injectUseCaseData(); 
+            // Instead of loading from local storage, we will populate with case data
+            populateWithCaseData();
             setupEventListeners();
             navigateTo('overview-landing', true);
             console.log("Application initialized.");
         }
         
+        function populateWithCaseData() {
+            // Clear existing data
+            const allContainerSelectors = [
+                '#team-members-table tbody', '#determinants-container', '#strategies-container', '#mechanisms-container',
+                '#risks-container', '#opportunities-container', '#timeline-container',
+                '#implementation-outcomes-container', '#service-outcomes-container', '#client-outcomes-container',
+                '#fidelity-plan-container', '#adaptations-container', '#instruments-container'
+            ];
+            allContainerSelectors.forEach(selector => {
+                const el = document.querySelector(selector);
+                if (el) el.innerHTML = '';
+            });
+
+            const caseData = {
+                simpleInputs: {
+                    'project-name': 'HIV Prevention Protocol Implementation',
+                    'primary-goal': 'To successfully implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency.',
+                    'ebp': 'A new evidence-based protocol for routine HIV screening and linkage to prevention services (including PrEP/PEP) for at-risk patient populations in a community clinic setting. This involves updated clinical workflows, new EHR templates, and patient education materials.'
+                },
+                tables: {
+                    'team-members-table': [
+                        { name: 'Dr. Alisha Patel', role: 'Project Lead' },
+                        { name: 'Carlos Rodriguez', role: 'Project Manager' },
+                        { name: 'Jenna Williams', role: 'Lead Trainer' },
+                        { name: 'Samira Khan', role: 'Clinical Supervisor' },
+                        { name: 'Brian O\'Connell', role: 'Data Manager' },
+                        { name: 'TBD', role: 'Clinic Champions (10)' }
+                    ],
+                    'determinants-container': [
+                        { determinant: 'Staff shortages and high turnover', context: 'Inner Setting', notes: 'Identified through preliminary meetings with clinic directors. This makes scheduling multi-day, in-person trainings nearly impossible.' },
+                        { determinant: 'Staff competing priorities and limited time', context: 'Inner Setting', notes: 'Clinicians have heavy patient loads and minimal protected time for non-clinical activities, including training.' },
+                        { determinant: 'COVID-19 precautions and social distancing mandates', context: 'Outer Setting', notes: 'Ongoing public health guidelines restrict large in-person gatherings, making group training sessions a safety concern.' },
+                        { determinant: 'Staff anxiety with new technology', context: 'Characteristics of Individuals', notes: 'Some staff members expressed discomfort with virtual meeting platforms during initial conversations.' }
+                    ],
+                    'strategies-container': [
+                        { strategy: 'Conduct ongoing training', determinants: 'Staff knowledge gaps (Inner Setting)', mechanism: 'Adapt training to a virtual format to improve accessibility and feasibility given staff shortages.' },
+                        { strategy: 'Develop educational materials', determinants: 'Limited time for training (Inner Setting)', mechanism: 'Create concise handouts to supplement the shortened webinar, allowing for asynchronous learning.' },
+                        { strategy: 'Distribute educational materials', determinants: 'Limited time for training (Inner Setting)', mechanism: 'Email handouts prior to the webinar so staff can review them beforehand.' },
+                        { strategy: 'Tailor strategies', determinants: 'Staff shortages, COVID precautions (Inner/Outer Setting)', mechanism: 'Pivoted the entire training approach from in-person to virtual to overcome logistical barriers.' }
+                    ],
+                    'mechanisms-container': [
+                        { mechanism: 'Increased Knowledge & Skills', description: 'The virtual webinar and supplementary handouts are designed to increase staff knowledge of the new HIV protocol and build their skills in applying it.' },
+                        { mechanism: 'Improved Accessibility', description: 'By moving to a virtual format, the training becomes more accessible to staff who cannot attend a multi-day in-person session due to scheduling conflicts or location.' }
+                    ],
+                    'implementation-outcomes-container': [
+                        { outcome: 'Feasibility', metric: 'Staff survey rating on the feasibility of the virtual training format > 4/5', stakeholder: 'Clinical Staff', source: 'Post-training survey', owner: 'Brian O\'Connell', date: '2025-11-15' },
+                        { outcome: 'Fidelity', metric: 'Adapted training curriculum covers >95% of the original core components', stakeholder: 'Project Team', source: 'Curriculum Review', owner: 'Jenna Williams', date: '2025-07-31' },
+                        { outcome: 'Adoption', metric: '100% of the 10 clinics have staff complete the new training', stakeholder: 'Clinics', source: 'Attendance Records', owner: 'Carlos Rodriguez', date: '2025-11-01' }
+                    ],
+                    'service-outcomes-container': [
+                        { outcome: 'Effectiveness', metric: '20% increase in the rate of HIV screening for eligible patients', source: 'EHR Data', target: 'Achieve by 2026-03-31', frequency: 'Quarterly' }
+                    ],
+                    'client-outcomes-container': [
+                        { outcome: 'Satisfaction', metric: 'Patient satisfaction survey (Item: "I feel comfortable discussing HIV prevention with my provider")', population: 'All screened patients', target: 'Average score > 4.5/5', collection_points: 'Post-visit survey' }
+                    ],
+                    'protocol-container': [
+                        { task: 'Develop virtual training module and handouts', start: '2025-07-10', end: '2025-07-31', owner: 'Jenna Williams', status: 'Complete', progress: '100', notes: 'Module finalized and handouts created.' },
+                        { task: 'Schedule 90-minute webinar for all 10 clinics', start: '2025-08-01', end: '2025-08-15', owner: 'Carlos Rodriguez', status: 'In Progress', progress: '50', notes: 'Coordinating with clinic managers.' },
+                        { task: 'Conduct pilot training with one clinic', start: '2025-08-25', end: '2025-08-30', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: '' },
+                        { task: 'Roll out training to remaining 9 clinics', start: '2025-09-15', end: '2025-10-31', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: '' }
+                    ],
+                    'fidelity-plan-container': [
+                        { component: 'Staff Training', function: 'Ensure staff understand and can correctly apply the new HIV prevention protocol.', dimension: 'Dose', method: 'Attendance logs, post-webinar survey', target: '>90% of staff attend the live or recorded webinar' },
+                        { component: 'Use of Screening Questions', function: 'To identify at-risk patients for further discussion.', dimension: 'Adherence', method: 'EHR Chart Audit', target: 'Screening questions documented for >80% of eligible patients' }
+                    ],
+                    'instruments-container': [
+                        { instrument: 'Post-Training Competency Quiz', construct: 'Staff Knowledge of Protocol', source: 'Internal Document', notes: '10-item multiple choice quiz administered via survey link at the end of the webinar. Passing score is 80%.' },
+                        { instrument: 'Staff Feedback Survey', construct: 'Acceptability & Feasibility', source: 'Internal Document', notes: 'Administered after the competency quiz. Uses Likert scales and open-ended questions to gather feedback on the virtual training format.' }
+                    ],
+                    'adaptations-container': [
+                        { modification: 'Changed training from in-person to virtual webinar', date: '2025-07-01', component: 'Staff Training', nature: 'Substituting', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Dr. Alisha Patel, Carlos Rodriguez, Jenna Williams', decisionRationale: 'Decision made in response to clinic directors\' reports of severe staffing shortages and ongoing concerns about in-person gatherings. The team decided a virtual format was the only feasible way to proceed without significant delays.' },
+                        { modification: 'Reduced training time and added handouts', date: '2025-07-08', component: 'Staff Training', nature: 'Shortening', goal: 'Improve Fit', planned: 'Planned/Reactive', decisionMakers: 'Jenna Williams, Samira Khan', decisionRationale: 'To minimize disruption to clinical services, the synchronous training was shortened to 90 minutes. Key information and case studies were moved to emailable handouts to be reviewed asynchronously. This addresses the \'competing priorities\' determinant.' }
+                    ],
+                    'risks-container': [
+                         { risk: 'Reduced training may lead to lower competency', start: '2025-07-08', likelihood: 'High', impact: 'High', cost: '1000', mitigation: 'Develop mandatory post-training competency quiz and offer optional Q&A sessions with the clinical supervisor.', notes: 'Risk identified by Lead Trainer after decision to shorten training time.'}
+                    ],
+                    'opportunities-container': [
+                        { opportunity: 'Virtual materials can be reused for new staff', start: '2025-07-08', benefit: 'High', feasibility: 'High', affected: '50', notes: 'The training webinar will be recorded. The handouts and recording will be bundled into a new hire orientation package, addressing the \'staff turnover\' determinant and reducing future training costs.'}
+                    ]
+                }
+            };
+            
+            if (caseData.simpleInputs) {
+                Object.entries(caseData.simpleInputs).forEach(([id, value]) => {
+                    const input = document.getElementById(id);
+                    if (input) input.value = value;
+                });
+            }
+            if (caseData.tables) {
+                Object.entries(caseData.tables).forEach(([tableId, tableData]) => {
+                    (tableData || []).forEach(rowData => addRow(tableId, rowData));
+                });
+            }
+            
+            allContainerSelectors.forEach(selector => updateEmptyState(selector.replace('#', '').split(' ')[0]));
+            updateSidebarTitle();
+            updateAllDashboards();
+            populateGlossary();
+            initializeFlippableCards();
+        }
+
         function buildPageTemplates() {
             for (const [pageId, config] of Object.entries(state.pageConfig)) {
                 const section = document.getElementById(pageId);
@@ -1500,134 +1611,6 @@
                 section.innerHTML = html;
             }
         }
-        
-        /**
-         * ----------------------------------------------------------------
-         * DATA INJECTION FOR USE CASE
-         * ----------------------------------------------------------------
-         */
-        function injectUseCaseData() {
-            console.log("Injecting use case data...");
-
-            const useCaseData = {
-                simpleInputs: {
-                    'project-name': 'Community Clinic HIV PrEP Protocol Roll-Out',
-                    'primary-goal': 'To successfully implement the new HIV prevention protocol across 10 community clinics, ensuring staff are trained and confident in its application, thereby increasing PrEP uptake and reducing new HIV infection rates in the communities served.',
-                    'ebp': 'A new evidence-based HIV prevention protocol, including updated guidelines for Pre-Exposure Prophylaxis (PrEP) screening, patient counseling, and prescription workflows. The implementation involves training clinical staff (nurses, doctors, medical assistants) to integrate this protocol into their standard patient care.'
-                },
-                tables: {
-                    'team-members-table': [
-                        { name: 'Dr. Anya', role: 'Project Lead / Principal Investigator' },
-                        { name: 'Ben', role: 'Implementation Specialist' },
-                        { name: 'Maria', role: 'Clinical Training Coordinator' },
-                        { name: 'David', role: 'Data Analyst / Evaluator' },
-                        { name: 'Emily', role: 'Project Coordinator / Admin Support' }
-                    ],
-                    'determinants-container': [
-                        { determinant: 'Staff shortages and high turnover', context: 'Inner Setting', notes: 'Identified through preliminary meetings with clinic managers. This is a major barrier to scheduling and attendance for any training initiative.' },
-                        { determinant: 'Limited time for non-clinical activities', context: 'Inner Setting', notes: 'Clinicians have very high patient loads, making it difficult to pull them away for multi-hour trainings.' },
-                        { determinant: 'COVID-19 precautions and restrictions', context: 'Outer Setting', notes: 'Primary driver for moving training to a virtual format to ensure safety and compliance with public health guidelines.' },
-                        { determinant: 'Clinician knowledge gaps about the new protocol', context: 'Characteristics of Individuals', notes: 'Pre-assessment showed inconsistent knowledge of the latest PrEP guidelines.' },
-                        { determinant: 'Varying levels of comfort with virtual platforms', context: 'Characteristics of Individuals', notes: 'Some staff are less tech-savvy, which could be a barrier to engagement in a webinar format.' },
-                        { determinant: 'Perceived complexity of the new protocol', context: 'Innovation Characteristics', notes: 'Staff are concerned the new protocol will add significant time to patient visits.' }
-                    ],
-                    'strategies-container': [
-                        { strategy: 'Conduct ongoing training', determinants: 'Clinician knowledge gaps (Characteristics of Individuals)', mechanism: 'Increase knowledge and skills regarding the new PrEP protocol.' },
-                        { strategy: 'Develop educational materials', determinants: 'Limited time for training (Inner Setting); Perceived complexity (Innovation Characteristics)', mechanism: 'Provide accessible, easy-to-use reference materials (checklists, FAQs) to reduce cognitive load and support learning outside of the live training.' },
-                        { strategy: 'Identify and prepare champions', determinants: 'Staff shortages (Inner Setting); Varying leadership support (Inner Setting)', mechanism: 'Build local expertise and peer support to drive adoption and assist with onboarding new staff, ensuring sustainability.' },
-                        { strategy: 'Audit and provide feedback', determinants: 'Clinician knowledge gaps (Characteristics of Individuals)', mechanism: 'Reinforce learning and correct protocol drift by providing actionable data on performance.' },
-                        { strategy: 'Tailor strategies', determinants: 'COVID-19 precautions (Outer Setting); Staff shortages (Inner Setting)', mechanism: 'Adapt the implementation plan to be feasible and acceptable within the current context, such as moving to a virtual format.' }
-                    ],
-                    'mechanisms-container': [
-                        { mechanism: 'Increased Knowledge & Skills', description: 'The virtual webinar and supplementary handouts will directly teach staff the core components of the new protocol, how to screen patients, and the key counseling points.' },
-                        { mechanism: 'Increased Self-Efficacy', description: 'By providing clear checklists and seeing local champions successfully use the protocol, staff will feel more confident in their own ability to implement it correctly.' },
-                        { mechanism: 'Improved Perceived Value & Buy-In', description: 'Champions and leadership will communicate the importance of the protocol for patient outcomes, increasing staff motivation to adopt it.' }
-                    ],
-                    'implementation-outcomes-container': [
-                        { outcome: 'Acceptability', metric: 'Score of >4/5 on the Acceptability of Intervention Measure (AIM) post-training', stakeholder: 'Clinical Staff', source: 'Post-Webinar Survey', owner: 'David Chen', date: '2025-08-15' },
-                        { outcome: 'Feasibility', metric: '>80% of clinics report they can implement the protocol within existing workflows', stakeholder: 'Clinic Managers', source: 'Manager Interviews', owner: 'Ben Carter', date: '2025-09-30' },
-                        { outcome: 'Fidelity', metric: '>90% adherence to core components on chart audit tool', stakeholder: 'Clinical Staff', source: 'EHR Chart Audits', owner: 'David Chen', date: '2025-12-31' },
-                        { outcome: 'Adoption', metric: 'At least 80% of all clinical staff across the 10 sites attend the webinar or watch the recording', stakeholder: 'Clinical Staff', source: 'Webinar Attendance Logs', owner: 'Maria Rodriguez', date: '2025-08-30' }
-                    ],
-                    'service-outcomes-container': [
-                        { outcome: 'Effectiveness', metric: '20% increase in the rate of PrEP prescriptions for eligible patients within 6 months', source: 'EHR Data', target: '20% increase', frequency: 'Quarterly' },
-                        { outcome: 'Timeliness', metric: 'Reduce average time from patient screening to PrEP discussion from 48 hours to <24 hours', source: 'EHR Data Analysis', target: '< 24 hours', frequency: 'Monthly' }
-                    ],
-                    'client-outcomes-container': [
-                        { outcome: 'Satisfaction', metric: 'Average score of >8/10 on patient satisfaction survey question related to prevention counseling', population: 'Patients receiving HIV prevention counseling', target: '>8/10 score', collection_points: 'Ongoing post-visit' },
-                        { outcome: 'Symptomatology', metric: '5% reduction in new HIV diagnoses among the patient population served by the 10 clinics', population: 'All clinic patients', target: '5% reduction', collection_points: 'Annually' }
-                    ],
-                    'timeline-container': [
-                        { task: 'Initial meeting with all clinic directors', start: '2025-04-01', end: '2025-04-15', owner: 'Dr. Anya Sharma', status: 'Complete', progress: '100', notes: 'Secured buy-in and identified potential site champions.' },
-                        { task: 'Develop virtual training curriculum & handouts', start: '2025-04-16', end: '2025-06-30', owner: 'Ben Carter', status: 'Complete', progress: '100', notes: 'Content adapted for 90-min webinar format. Handouts include checklists and FAQs.' },
-                        { task: 'Schedule and promote webinar training', start: '2025-07-01', end: '2025-07-08', owner: 'Maria Rodriguez', status: 'In Progress', progress: '50', notes: 'Date is set for Aug 1. Still need to send final reminders.' },
-                        { task: 'Conduct tech run-through with presenters', start: '2025-07-25', end: '2025-07-25', owner: 'Maria Rodriguez', status: 'Not Started', progress: '0', notes: '' },
-                        { task: 'Deliver 90-minute live webinar', start: '2025-08-01', end: '2025-08-01', owner: 'Maria Rodriguez', status: 'Not Started', progress: '0', notes: 'Primary training event.' },
-                        { task: 'Distribute post-training survey & knowledge quiz', start: '2025-08-01', end: '2025-08-15', owner: 'David Chen', status: 'Not Started', progress: '0', notes: 'Will use survey to measure Acceptability.' },
-                        { task: 'Begin monthly chart audits for fidelity', start: '2025-09-01', end: '2026-02-28', owner: 'David Chen', status: 'Not Started', progress: '0', notes: 'First report due Oct 15.' },
-                        { task: 'Final Project Report', start: '2026-03-01', end: '2026-03-31', owner: 'Dr. Anya Sharma', status: 'Not Started', progress: '0', notes: '' }
-                    ],
-                    'fidelity-plan-container': [
-                        { component: 'Correct patient screening using new criteria', function: 'Identify all at-risk patients for HIV', dimension: 'Adherence', method: 'EHR Chart Audit Checklist', target: '95% of eligible patients screened' },
-                        { component: 'Offer PrEP to all eligible patients', function: 'Maximize prevention opportunities', dimension: 'Dose', method: 'EHR Query (Prescription/Referral fields)', target: 'PrEP offered to 100% of eligible patients' },
-                        { component: 'Provide standardized patient counseling', function: 'Ensure consistent, accurate information is shared', dimension: 'Quality', method: 'Direct observation checklist (for champions)', target: '>90% of key script points covered' }
-                    ],
-                    'instruments-container': [
-                        { instrument: 'Acceptability of Intervention Measure (AIM)', construct: 'Acceptability', source: 'Proctor et al., 2011', notes: '4-item measure on a 5-point Likert scale. Will be included in the post-training survey.' },
-                        { instrument: 'PrEP Protocol Adherence Checklist', construct: 'Fidelity (Adherence, Dose)', source: 'Self-developed for this project', notes: 'Used by data analyst for monthly chart audits. Includes 10 key protocol steps.' },
-                        { instrument: 'Post-Training Knowledge Quiz', construct: 'Clinician Knowledge', source: 'Self-developed', notes: '10 multiple-choice questions to assess knowledge retention immediately after webinar.' }
-                    ],
-                    'adaptations-container': [
-                        { modification: 'Shifted training from in-person to virtual webinar', date: '2025-03-15', component: 'Conduct ongoing training', nature: 'Substituting', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Project Team, Clinic Directors', decisionRationale: 'Due to sudden COVID-19 restrictions and clinic-reported staff shortages, in-person training became infeasible. The team decided a virtual format was the only way to proceed without significant delays.' },
-                        { modification: 'Reduced training time from 8 hours to 90 minutes', date: '2025-03-20', component: 'Conduct ongoing training', nature: 'Shortening', goal: 'Improve Fit', planned: 'Planned/Reactive', decisionMakers: 'Project Team, Clinic Managers', decisionRationale: 'Clinic managers reported they could not release staff for a full day or even two half-days due to staffing levels. A 90-minute format was a compromise to ensure maximum attendance.' },
-                        { modification: 'Added supplementary email handouts', date: '2025-04-05', component: 'Develop educational materials', nature: 'Adding', goal: 'Improve Effectiveness', planned: 'Planned/Reactive', decisionMakers: 'Project Team', decisionRationale: 'To compensate for the reduced live training time, the team created detailed handouts, checklists, and FAQs to serve as a durable reference for staff after the webinar.' }
-                    ],
-                    'risks-container': [
-                        { risk: 'Low engagement in virtual training', start: '2025-07-01', likelihood: 'High', impact: 'Medium', cost: '0', mitigation: 'Make webinar highly interactive with polls, case studies, and a lengthy Q&A. Record for asynchronous viewing.', notes: 'Staff are often multitasking during virtual trainings.' },
-                        { risk: 'Staff do not read email handouts', start: '2025-08-02', likelihood: 'Medium', impact: 'High', cost: '500', mitigation: 'Champions will remind staff during huddles. Key checklists will be integrated into EHR templates. Send a follow-up quiz.', notes: 'Information overload is a common issue.' },
-                        { risk: 'Technology failures during webinar', start: '2025-08-01', likelihood: 'Low', impact: 'High', cost: '2000', mitigation: 'Conduct a full tech run-through one week prior. Have a backup plan to communicate with attendees (e.g., mass email) and reschedule if necessary.', notes: 'A major failure could derail the primary training event, costing time and credibility.' }
-                    ],
-                    'opportunities-container': [
-                        { opportunity: 'Webinar recording can be used for new hire training', start: '2025-08-02', benefit: 'High', feasibility: 'High', affected: '50', notes: 'The recording can be packaged with the handouts into a standardized, on-demand orientation module for all future clinical hires, saving significant future training resources.' },
-                        { opportunity: 'Partner with local health department on promotion', start: '2025-09-01', benefit: 'Medium', feasibility: 'Medium', affected: '5000', notes: 'A local health department contact expressed interest in our protocol. A partnership could lead to wider community awareness and increased patient demand for PrEP services.' }
-                    ]
-                }
-            };
-
-            // Apply simple inputs
-            if (useCaseData.simpleInputs) {
-                Object.entries(useCaseData.simpleInputs).forEach(([id, value]) => {
-                    const input = document.getElementById(id);
-                    if (input) input.value = value;
-                });
-            }
-
-            // Apply table data
-            if (useCaseData.tables) {
-                Object.entries(useCaseData.tables).forEach(([tableId, tableData]) => {
-                    const container = document.getElementById(tableId.replace('-container', ''));
-                    if (container) { // Clear existing rows before adding new ones
-                         const rowSelector = container.tagName === 'TABLE' ? 'tbody' : `#${tableId}`;
-                         const el = document.querySelector(rowSelector);
-                         if(el) el.innerHTML = '';
-                    }
-                    (tableData || []).forEach(rowData => addRow(tableId, rowData));
-                });
-            }
-
-            // Final UI updates after data injection
-            const allContainerIds = Object.values(state.pageConfig)
-                .map(c => c.containerId)
-                .filter(Boolean)
-                .concat(['team-members-table', 'implementation-outcomes-container', 'service-outcomes-container', 'client-outcomes-container']);
-
-            allContainerIds.forEach(id => updateEmptyState(id));
-            updateSidebarTitle();
-            updateAllDashboards();
-            populateGlossary();
-            initializeFlippableCards();
-        }
-
 
         /**
          * ----------------------------------------------------------------
@@ -1700,8 +1683,7 @@
                     });
                 }
             } else {
-                console.log("No saved plan found. Initializing with use case data.");
-                injectUseCaseData(); // Fallback to use case data if nothing in local storage
+                console.log("No saved plan found. Initializing new template.");
             }
             
             allContainerSelectors.forEach(selector => updateEmptyState(selector.replace('#', '').split(' ')[0]));
@@ -1811,7 +1793,7 @@
             const container = document.getElementById(containerId);
             const rowSelector = container.tagName === 'TABLE' ? 'tbody tr' : '.expandable-row, .expandable-card';
             
-            if (keyField && Object.keys(data).length === 0) { // Only check for empty rows if we are not populating with data
+            if (keyField) {
                 const rows = container.querySelectorAll(rowSelector);
                 for (const row of rows) {
                     const input = row.querySelector(`[data-field="${keyField}"]`);
@@ -1937,7 +1919,7 @@
             const module = card.dataset.module;
             const backFace = card.querySelector('.card-face-back');
             if (!module || !backFace) return;
-
+        
             const planData = getPlanData();
             const moduleMap = {
                 determinants: { title: 'Determinants', data: planData.tables['determinants-container'], key: 'determinant', page: 'determinants', buttonText: 'Add Determinant' },
@@ -1952,21 +1934,89 @@
                 opportunities: { title: 'Opportunities', data: planData.tables['opportunities-container'], key: 'opportunity', page: 'opportunities', buttonText: 'Add Opportunity' },
                 summary: { title: 'Summary & Dashboard', data: [{name: 'Open Full Report'}], key: 'name', page: 'summary', buttonText: 'Open Full Report'}
             };
-
+        
             const config = moduleMap[module];
             if (!config) return;
-
+        
             let content = `<h4 class="card-back-title">${config.title}</h4>`;
-            const validData = config.data?.filter(item => item && item[config.key]);
+            const validData = config.data?.filter(item => item && item[config.key] && item[config.key].trim());
             
             if (validData && validData.length > 0) {
-                 if (module === 'summary') {
-                       content += `<div class="card-back-empty"><button class="add-row-btn nav-link" data-target="${config.page}">${config.buttonText}</button></div>`;
-                 } else {
+                if (module === 'summary') {
+                    content += `<div class="card-back-empty"><button class="add-row-btn nav-link" data-target="${config.page}">${config.buttonText}</button></div>`;
+                } else if (module === 'determinants') {
+                    const determinantGroups = [
+                        { heading: 'Innovation', key: 'Innovation Characteristics' },
+                        { heading: 'Outer Context', key: 'Outer Setting' },
+                        { heading: 'Inner Context', key: 'Inner Setting' },
+                        { heading: 'Personal Characteristics', key: 'Characteristics of Individuals' }
+                    ];
+                    const groupedDeterminants = validData.reduce((acc, item) => {
+                        const groupKey = item.context || 'Uncategorized';
+                        if (!acc[groupKey]) acc[groupKey] = [];
+                        acc[groupKey].push(item);
+                        return acc;
+                    }, {});
+        
+                    let listContent = '';
+                    determinantGroups.forEach(group => {
+                        if (groupedDeterminants[group.key] && groupedDeterminants[group.key].length > 0) {
+                            listContent += `<h5 class="card-back-group-header">${group.heading}</h5>`;
+                            listContent += `<ul class="card-back-list">`;
+                            groupedDeterminants[group.key].forEach(item => {
+                                const index = validData.indexOf(item);
+                                if (index > -1) {
+                                    listContent += `<li><a href="#" class="nav-link" data-target="${config.page}" data-item-index="${index}">${item[config.key]}</a></li>`;
+                                }
+                            });
+                            listContent += `</ul>`;
+                        }
+                    });
+        
+                    if (groupedDeterminants['Uncategorized'] && groupedDeterminants['Uncategorized'].length > 0) {
+                        listContent += `<h5 class="card-back-group-header">Uncategorized</h5>`;
+                        listContent += `<ul class="card-back-list">`;
+                        groupedDeterminants['Uncategorized'].forEach(item => {
+                            const index = validData.indexOf(item);
+                            if (index > -1) {
+                                listContent += `<li><a href="#" class="nav-link" data-target="${config.page}" data-item-index="${index}">${item[config.key]}</a></li>`;
+                            }
+                        });
+                        listContent += `</ul>`;
+                    }
+                    content += listContent;
+                } else if (module === 'outcomes') {
+                    const implOutcomes = planData.tables['implementation-outcomes-container'] || [];
+                    const servOutcomes = planData.tables['service-outcomes-container'] || [];
+                    const clientOutcomes = planData.tables['client-outcomes-container'] || [];
+        
+                    const outcomeGroups = [
+                        { heading: 'Implementation Outcomes', data: implOutcomes },
+                        { heading: 'Service Outcomes', data: servOutcomes },
+                        { heading: 'Client Outcomes', data: clientOutcomes }
+                    ];
+        
+                    let listContent = '';
+                    outcomeGroups.forEach(group => {
+                        const validItemsInGroup = group.data.filter(item => item && item.outcome && item.outcome.trim());
+                        if (validItemsInGroup.length > 0) {
+                            listContent += `<h5 class="card-back-group-header">${group.heading}</h5>`;
+                            listContent += `<ul class="card-back-list">`;
+                            validItemsInGroup.forEach(item => {
+                                const index = validData.findIndex(flatItem => flatItem === item);
+                                if (index > -1) {
+                                    listContent += `<li><a href="#" class="nav-link" data-target="${config.page}" data-item-index="${index}">${item.outcome}</a></li>`;
+                                }
+                            });
+                            listContent += `</ul>`;
+                        }
+                    });
+                    content += listContent;
+                } else {
                     content += `<ul class="card-back-list">${validData.map((item, index) => `<li><a href="#" class="nav-link" data-target="${config.page}" data-item-index="${index}">${item[config.key]}</a></li>`).join('')}</ul>`;
-                 }
+                }
             } else {
-                 content += `<div class="card-back-empty"><p>No ${config.title.toLowerCase()} defined yet.</p><button class="add-row-btn add-item-from-card nav-link" data-target="${config.page}">${config.buttonText}</button></div>`;
+                content += `<div class="card-back-empty"><p>No ${config.title.toLowerCase()} defined yet.</p><button class="add-row-btn add-item-from-card nav-link" data-target="${config.page}">${config.buttonText}</button></div>`;
             }
             backFace.innerHTML = content;
         }
