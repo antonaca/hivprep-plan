@@ -1388,7 +1388,7 @@
         function initializeApp() {
             console.log("Initializing application...");
             buildPageTemplates();
-            // Instead of loading from local storage, we will inject the data directly
+            // Directly inject the use case data instead of loading from local storage
             injectUseCaseData(); 
             setupEventListeners();
             navigateTo('overview-landing', true);
@@ -1512,7 +1512,7 @@
             const useCaseData = {
                 simpleInputs: {
                     'project-name': 'Community Clinic HIV PrEP Protocol Roll-Out',
-                    'primary-goal': 'To implement the new HIV prevention protocol across 10 community clinics, ensuring staff are trained and confident in its application, thereby increasing PrEP uptake and reducing new HIV infection rates in the communities served.',
+                    'primary-goal': 'To successfully implement the new HIV prevention protocol across 10 community clinics, ensuring staff are trained and confident in its application, thereby increasing PrEP uptake and reducing new HIV infection rates in the communities served.',
                     'ebp': 'A new evidence-based HIV prevention protocol, including updated guidelines for Pre-Exposure Prophylaxis (PrEP) screening, patient counseling, and prescription workflows. The implementation involves training clinical staff (nurses, doctors, medical assistants) to integrate this protocol into their standard patient care.'
                 },
                 tables: {
@@ -1557,7 +1557,7 @@
                         { outcome: 'Satisfaction', metric: 'Average score of >8/10 on patient satisfaction survey question related to prevention counseling', population: 'Patients receiving HIV prevention counseling', target: '>8/10 score', collection_points: 'Ongoing post-visit' },
                         { outcome: 'Symptomatology', metric: '5% reduction in new HIV diagnoses among the patient population served by the 10 clinics', population: 'All clinic patients', target: '5% reduction', collection_points: 'Annually' }
                     ],
-                    'protocol-container': [
+                    'timeline-container': [
                         { task: 'Initial meeting with all clinic directors', start: '2025-04-01', end: '2025-04-15', owner: 'Dr. Anya Sharma', status: 'Complete', progress: '100', notes: 'Secured buy-in and identified potential site champions.' },
                         { task: 'Develop virtual training curriculum & handouts', start: '2025-04-16', end: '2025-06-30', owner: 'Ben Carter', status: 'Complete', progress: '100', notes: 'Content adapted for 90-min webinar format. Handouts include checklists and FAQs.' },
                         { task: 'Schedule and promote webinar training', start: '2025-07-01', end: '2025-07-08', owner: 'Maria Rodriguez', status: 'In Progress', progress: '50', notes: 'Date is set for Aug 1. Still need to send final reminders.' },
@@ -1605,6 +1605,12 @@
             // Apply table data
             if (useCaseData.tables) {
                 Object.entries(useCaseData.tables).forEach(([tableId, tableData]) => {
+                    const container = document.getElementById(tableId.replace('-container', ''));
+                    if (container) { // Clear existing rows before adding new ones
+                         const rowSelector = container.tagName === 'TABLE' ? 'tbody' : `#${tableId}`;
+                         const el = document.querySelector(rowSelector);
+                         if(el) el.innerHTML = '';
+                    }
                     (tableData || []).forEach(rowData => addRow(tableId, rowData));
                 });
             }
