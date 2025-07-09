@@ -846,7 +846,7 @@
     <div class="app-layout">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h2 id="sidebar-title">HIV Prevention Protocol Implementation</h2>
+                <h2 id="sidebar-title">New Project</h2>
             </div>
             <ul class="sidebar-nav">
                 <li>
@@ -904,7 +904,7 @@
                     </div>
                     <div class="form-group">
                         <label for="primary-goal">Primary Goal:</label>
-                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To successfully implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency in the new workflows.</textarea>
+                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency in the new workflows.</textarea>
                     </div>
                     <div class="form-group">
                         <label for="ebp">Evidence-Based Practice (EBP) or Initiative:</label>
@@ -1398,26 +1398,19 @@
         function initializeApp() {
             console.log("Initializing application...");
             buildPageTemplates();
-            // Instead of loading from local storage, we will populate with case data
-            populateWithCaseData();
+            // Load data from either local storage or the default case data
+            const savedData = localStorage.getItem('implementationPlanData');
+            if (savedData) {
+                loadPlanFromLocalStorage();
+            } else {
+                populateWithCaseData();
+            }
             setupEventListeners();
             navigateTo('overview-landing', true);
             console.log("Application initialized.");
         }
         
         function populateWithCaseData() {
-            // Clear existing data
-            const allContainerSelectors = [
-                '#team-members-table tbody', '#determinants-container', '#strategies-container', '#mechanisms-container',
-                '#risks-container', '#opportunities-container', '#timeline-container',
-                '#implementation-outcomes-container', '#service-outcomes-container', '#client-outcomes-container',
-                '#fidelity-plan-container', '#adaptations-container', '#instruments-container'
-            ];
-            allContainerSelectors.forEach(selector => {
-                const el = document.querySelector(selector);
-                if (el) el.innerHTML = '';
-            });
-
             const caseData = {
                 simpleInputs: {
                     'project-name': 'HIV Prevention Protocol Implementation',
@@ -1432,6 +1425,10 @@
                         { name: 'Samira Khan', role: 'Clinical Supervisor' },
                         { name: 'Brian O\'Connell', role: 'Data Manager' },
                         { name: 'TBD', role: 'Clinic Champions (10)' }
+                    ],
+                    'fidelity-plan-container': [
+                        { component: 'Staff Training', function: 'Ensure staff understand and can correctly apply the new HIV prevention protocol.', dimension: 'Dose', method: 'Attendance logs, post-webinar survey', target: '>90% of staff attend the live or recorded webinar' },
+                        { component: 'Use of Screening Questions', function: 'To identify at-risk patients for further discussion.', dimension: 'Adherence', method: 'EHR Chart Audit', target: 'Screening questions documented for >80% of eligible patients' }
                     ],
                     'determinants-container': [
                         { determinant: 'Staff shortages and high turnover', context: 'Inner Setting', notes: 'Identified through preliminary meetings with clinic directors. This makes scheduling multi-day, in-person trainings nearly impossible.' },
@@ -1460,15 +1457,11 @@
                     'client-outcomes-container': [
                         { outcome: 'Satisfaction', metric: 'Patient satisfaction survey (Item: "I feel comfortable discussing HIV prevention with my provider")', population: 'All screened patients', target: 'Average score > 4.5/5', collection_points: 'Post-visit survey' }
                     ],
-                    'protocol-container': [
+                    'timeline-container': [
                         { task: 'Develop virtual training module and handouts', start: '2025-07-10', end: '2025-07-31', owner: 'Jenna Williams', status: 'Complete', progress: '100', notes: 'Module finalized and handouts created.' },
                         { task: 'Schedule 90-minute webinar for all 10 clinics', start: '2025-08-01', end: '2025-08-15', owner: 'Carlos Rodriguez', status: 'In Progress', progress: '50', notes: 'Coordinating with clinic managers.' },
                         { task: 'Conduct pilot training with one clinic', start: '2025-08-25', end: '2025-08-30', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: '' },
                         { task: 'Roll out training to remaining 9 clinics', start: '2025-09-15', end: '2025-10-31', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: '' }
-                    ],
-                    'fidelity-plan-container': [
-                        { component: 'Staff Training', function: 'Ensure staff understand and can correctly apply the new HIV prevention protocol.', dimension: 'Dose', method: 'Attendance logs, post-webinar survey', target: '>90% of staff attend the live or recorded webinar' },
-                        { component: 'Use of Screening Questions', function: 'To identify at-risk patients for further discussion.', dimension: 'Adherence', method: 'EHR Chart Audit', target: 'Screening questions documented for >80% of eligible patients' }
                     ],
                     'instruments-container': [
                         { instrument: 'Post-Training Competency Quiz', construct: 'Staff Knowledge of Protocol', source: 'Internal Document', notes: '10-item multiple choice quiz administered via survey link at the end of the webinar. Passing score is 80%.' },
@@ -1486,19 +1479,42 @@
                     ]
                 }
             };
-            
+
+            // 1. Populate simple inputs first
             if (caseData.simpleInputs) {
                 Object.entries(caseData.simpleInputs).forEach(([id, value]) => {
                     const input = document.getElementById(id);
                     if (input) input.value = value;
                 });
             }
+
+            // 2. Populate tables in a specific order to handle dependencies
             if (caseData.tables) {
-                Object.entries(caseData.tables).forEach(([tableId, tableData]) => {
-                    (tableData || []).forEach(rowData => addRow(tableId, rowData));
+                // Team members first, as others depend on it for 'owner' fields
+                (caseData.tables['team-members-table'] || []).forEach(rowData => addRow('team-members-table', rowData));
+                
+                // Fidelity components next, as adaptations depend on it
+                (caseData.tables['fidelity-plan-container'] || []).forEach(rowData => addRow('fidelity-plan-container', rowData));
+
+                // Now populate the rest
+                const remainingTables = [
+                    'determinants-container', 'strategies-container', 'mechanisms-container',
+                    'implementation-outcomes-container', 'service-outcomes-container', 'client-outcomes-container',
+                    'protocol-container', 'instruments-container', 'adaptations-container',
+                    'risks-container', 'opportunities-container'
+                ];
+                remainingTables.forEach(tableId => {
+                    (caseData.tables[tableId] || []).forEach(rowData => addRow(tableId, rowData));
                 });
             }
-            
+
+            // 3. Now that the DOM is populated, run all update/refresh functions
+            const allContainerSelectors = [
+                '#team-members-table tbody', '#determinants-container', '#strategies-container', '#mechanisms-container',
+                '#risks-container', '#opportunities-container', '#timeline-container',
+                '#implementation-outcomes-container', '#service-outcomes-container', '#client-outcomes-container',
+                '#fidelity-plan-container', '#adaptations-container', '#instruments-container'
+            ];
             allContainerSelectors.forEach(selector => updateEmptyState(selector.replace('#', '').split(' ')[0]));
             updateSidebarTitle();
             updateAllDashboards();
