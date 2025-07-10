@@ -1420,7 +1420,7 @@
                 tables: {
                     'team-members-table': [
                         { name: 'Dr. Alisha Patel', role: 'Project Lead' },
-                        { name: 'Carlos Rodriguez', role: 'Project Manager' },
+                        { name: 'Dana Thompson', role: 'Project Manager' },
                         { name: 'Jenna Williams', role: 'Lead Trainer' },
                         { name: 'Samira Khan', role: 'Clinical Supervisor' },
                         { name: 'Brian O\'Connell', role: 'Data Manager' },
@@ -1449,7 +1449,7 @@
                     'implementation-outcomes-container': [
                         { outcome: 'Feasibility', metric: 'Staff survey rating on the feasibility of the virtual training format > 4/5', stakeholder: 'Clinical Staff', source: 'Post-training survey', owner: 'Brian O\'Connell', date: '2025-11-15' },
                         { outcome: 'Fidelity', metric: 'Adapted training curriculum covers >95% of the original core components', stakeholder: 'Project Team', source: 'Curriculum Review', owner: 'Jenna Williams', date: '2025-07-31' },
-                        { outcome: 'Adoption', metric: '100% of the 10 clinics have staff complete the new training', stakeholder: 'Clinics', source: 'Attendance Records', owner: 'Carlos Rodriguez', date: '2025-11-01' }
+                        { outcome: 'Adoption', metric: '100% of the 10 clinics have staff complete the new training', stakeholder: 'Clinics', source: 'Attendance Records', owner: 'Dana Thompson', date: '2025-11-01' }
                     ],
                     'service-outcomes-container': [
                         { outcome: 'Effectiveness', metric: '20% increase in the rate of HIV screening for eligible patients', source: 'EHR Data', target: 'Achieve by 2026-03-31', frequency: 'Quarterly' }
@@ -1458,17 +1458,40 @@
                         { outcome: 'Satisfaction', metric: 'Patient satisfaction survey (Item: "I feel comfortable discussing HIV prevention with my provider")', population: 'All screened patients', target: 'Average score > 4.5/5', collection_points: 'Post-visit survey' }
                     ],
                     'timeline-container': [
-                        { task: 'Develop virtual training module and handouts', start: '2025-07-10', end: '2025-07-31', owner: 'Jenna Williams', status: 'Complete', progress: '100', notes: 'Module finalized and handouts created.' },
-                        { task: 'Schedule 90-minute webinar for all 10 clinics', start: '2025-08-01', end: '2025-08-15', owner: 'Carlos Rodriguez', status: 'In Progress', progress: '50', notes: 'Coordinating with clinic managers.' },
-                        { task: 'Conduct pilot training with one clinic', start: '2025-08-25', end: '2025-08-30', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: '' },
-                        { task: 'Roll out training to remaining 9 clinics', start: '2025-09-15', end: '2025-10-31', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: '' }
+                        // Phase 1: Project Initiation & Planning
+                        { task: 'Phase 1 Kick-off Meeting', start: '2025-06-02', end: '2025-06-02', owner: 'Dr. Alisha Patel', status: 'Complete', progress: '100', notes: 'Official project start. Confirmed scope, goals, and team roles.' },
+                        { task: 'Finalize Project Charter & Implementation Plan', start: '2025-06-03', end: '2025-06-17', owner: 'Dana Thompson', status: 'Complete', progress: '100', notes: 'Document approved by leadership.' },
+                        { task: 'Conduct Leadership & Stakeholder Engagement Meetings', start: '2025-06-18', end: '2025-06-30', owner: 'Dr. Alisha Patel', status: 'Complete', progress: '100', notes: 'Secured buy-in from all 10 clinic managers.' },
+                        { task: 'Identify and Recruit Clinic Champions', start: '2025-07-01', end: '2025-07-15', owner: 'Samira Khan', status: 'In Progress', progress: '75', notes: '8 of 10 champions identified. Finalizing last two.' },
+
+                        // Phase 2: Protocol Development & Systems Setup
+                        { task: 'Adapt CDC PrEP Guidelines for Local Context', start: '2025-07-16', end: '2025-07-31', owner: 'Dr. Alisha Patel', status: 'Not Started', progress: '0', notes: 'Review and tailor clinical guidelines for our patient population.' },
+                        { task: 'Configure EHR with New PrEP Templates & Order Sets', start: '2025-08-01', end: '2025-08-22', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Includes screening questions, lab orders, and prescription templates.' },
+                        { task: 'Develop Patient Education Materials (Brochures, Posters)', start: '2025-08-04', end: '2025-08-29', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'Materials to be reviewed for health literacy and cultural appropriateness.' },
+                        { task: 'Develop Staff Training Curriculum & Materials', start: '2025-08-25', end: '2025-09-12', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'To include webinar, quick-reference guides, and competency quiz.' },
+
+                        // Phase 3: Training & Pilot Implementation
+                        { task: 'Train Clinic Champions on Protocol & Their Role', start: '2025-09-15', end: '2025-09-19', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'Champions will help facilitate training and support peers.' },
+                        { task: 'Conduct Staff Training Webinars (All Clinics)', start: '2025-09-22', end: '2025-10-10', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'Multiple sessions to accommodate all staff schedules.' },
+                        { task: 'Pilot Implementation at 2 Clinics', start: '2025-10-13', end: '2025-11-07', owner: 'Samira Khan', status: 'Not Started', progress: '0', notes: 'Pilot sites: Downtown Clinic and Westside Family Health.' },
+                        { task: 'Collect Pilot Feedback & Refine Protocol/Workflow', start: '2025-11-10', end: '2025-11-21', owner: 'Dana Thompson', status: 'Not Started', progress: '0', notes: 'Use surveys and focus groups with pilot staff.' },
+
+                        // Phase 4: Full Roll-out & Monitoring
+                        { task: 'Full Roll-out to Remaining 8 Clinics', start: '2025-11-24', end: '2025-12-19', owner: 'Dana Thompson', status: 'Not Started', progress: '0', notes: 'Staggered launch, 2 clinics per week.' },
+                        { task: 'Begin Monthly Fidelity Monitoring via Chart Audits', start: '2025-12-01', end: '2026-06-30', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Ongoing task. First report due Jan 15, 2026.' },
+                        { task: 'Provide Ongoing Coaching & Clinical Supervision', start: '2025-12-01', end: '2026-06-30', owner: 'Samira Khan', status: 'Not Started', progress: '0', notes: 'Regular check-ins with clinic champions and staff.' },
+
+                        // Phase 5: Evaluation & Sustainment
+                        { task: 'Administer Post-Implementation Staff Survey', start: '2026-01-05', end: '2026-01-16', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Assess acceptability, appropriateness, and feasibility.' },
+                        { task: 'Analyze Initial Outcome Data (3 months post-rollout)', start: '2026-03-16', end: '2026-03-27', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Focus on screening rates and PrEP uptake.' },
+                        { task: 'Present Final Report to Leadership', start: '2026-04-13', end: '2026-04-17', owner: 'Dr. Alisha Patel', status: 'Not Started', progress: '0', notes: 'Summarize project outcomes and provide recommendations for sustainment.' }
                     ],
                     'instruments-container': [
                         { instrument: 'Post-Training Competency Quiz', construct: 'Staff Knowledge of Protocol', source: 'Internal Document', notes: '10-item multiple choice quiz administered via survey link at the end of the webinar. Passing score is 80%.' },
                         { instrument: 'Staff Feedback Survey', construct: 'Acceptability & Feasibility', source: 'Internal Document', notes: 'Administered after the competency quiz. Uses Likert scales and open-ended questions to gather feedback on the virtual training format.' }
                     ],
                     'adaptations-container': [
-                        { modification: 'Changed training from in-person to virtual webinar', date: '2025-07-01', component: 'Staff Training', nature: 'Substituting', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Dr. Alisha Patel, Carlos Rodriguez, Jenna Williams', decisionRationale: 'Decision made in response to clinic directors\' reports of severe staffing shortages and ongoing concerns about in-person gatherings. The team decided a virtual format was the only feasible way to proceed without significant delays.' },
+                        { modification: 'Changed training from in-person to virtual webinar', date: '2025-07-01', component: 'Staff Training', nature: 'Substituting', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Dr. Alisha Patel, Dana Thompson, Jenna Williams', decisionRationale: 'Decision made in response to clinic directors\' reports of severe staffing shortages and ongoing concerns about in-person gatherings. The team decided a virtual format was the only feasible way to proceed without significant delays.' },
                         { modification: 'Reduced training time to 90 minutes', date: '2025-07-08', component: 'Staff Training', nature: 'Shortening', goal: 'Improve Fit', planned: 'Planned/Reactive', decisionMakers: 'Jenna Williams, Samira Khan', decisionRationale: 'To minimize disruption to clinical services, the synchronous training was shortened to 90 minutes. Key information and case studies were moved to emailable handouts to be reviewed asynchronously. This addresses the \'competing priorities\' determinant.' },
                         { modification: 'Created supplementary handouts for staff', date: '2025-07-08', component: 'Staff Training', nature: 'Adding', goal: 'Improve Fit', planned: 'Planned/Reactive', decisionMakers: 'Jenna Williams, Samira Khan', decisionRationale: 'To support learning in asynchronous training, supplementary materials were created to provide training participants in case they want to revisit any components of the training.' }
                     ],
