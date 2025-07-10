@@ -12,19 +12,23 @@ Important Note on Saving: Your work is saved automatically and stored directly w
 
 ## Navigating the Tool
 The main navigation is on the sidebar to the left. Each section represents a key part of your implementation plan.
+
 ### 1. Overview
 This is the starting point for your project.
+
 Project Title, Goal, and EBP: Define the what and why of your project. Give it a clear name, state its primary goal, and describe the evidence-based practice (EBP) or initiative you are implementing.
+
 Team & Roles: List all the key people involved in the project and their responsibilities. Click the "Add Member" button to add new rows.
+
 ### 2. Model
 This section helps you build an Implementation Research Logic Model (IRLM). This model is a visual map that connects your strategies to your expected outcomes. The cards on this page flip over to show you a list of items you've entered.
-Determinants: What factors might help or hinder your project? These can be barriers (e.g., "Lack of staff time") or facilitators (e.g., "Strong leadership support").
-Strategies: What specific actions will you take to address your determinants? The tool includes a searchable list of strategies from the Expert Recommendations for Implementing Change (ERIC) project.
-Mechanisms: How will your strategies work? A mechanism explains the process of change (e.g., a training strategy works by "Increasing staff knowledge and skills").
-Outcomes: What will you measure to see if your project is successful? Outcomes are broken down into three types based on Proctor's Taxonomy:
-Implementation Outcomes: How well was the implementation process carried out? (e.g., Feasibility, Fidelity, Cost).
-Service Outcomes: How did the EBP affect service delivery? (e.g., Efficiency, Safety).
-Client Outcomes: How did the EBP affect the clients or patients? (e.g., Satisfaction, Symptoms).
+- Determinants: What factors might help or hinder your project? These can be barriers (e.g., "Lack of staff time") or facilitators (e.g., "Strong leadership support").
+- Strategies: What specific actions will you take to address your determinants? The tool includes a searchable list of strategies from the Expert Recommendations for Implementing Change (ERIC) project.
+- Mechanisms: How will your strategies work? A mechanism explains the process of change (e.g., a training strategy works by "Increasing staff knowledge and skills").
+- Outcomes: What will you measure to see if your project is successful? Outcomes are broken down into three types based on Proctor's Taxonomy...
+  - Implementation Outcomes: How well was the implementation process carried out? (e.g., Feasibility, Fidelity, Cost).
+  - Service Outcomes: How did the EBP affect service delivery? (e.g., Efficiency, Safety).
+  - Client Outcomes: How did the EBP affect the clients or patients? (e.g., Satisfaction, Symptoms).
 ### 3. Plan
 This is where you translate your model into a concrete action plan.
 - Protocol: Create a detailed timeline of all activities, tasks, milestones, and events. Assign an owner, set start/end dates, and track the status and progress of each item.
