@@ -901,15 +901,15 @@
                     <h3>Project Overview</h3>
                     <div class="form-group">
                         <label for="project-name">Title:</label>
-                        <input type="text" id="project-name" class="saveable" placeholder="Enter a name for the project or initiative." value="HIV PrEP Protocol Roll-Out"/>
+                        <input type="text" id="project-name" class="saveable" placeholder="Enter a name for the project or initiative." value="HIV Prevention Protocol Virtual Training Rollout"/>
                     </div>
                     <div class="form-group">
                         <label for="primary-goal">Primary Goal:</label>
-                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To successfully implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency.</textarea>
+                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To successfully train clinical staff at 10 community clinics on the new HIV prevention protocol using an adapted virtual format to ensure safe and effective implementation amidst staff shortages and public health precautions.</textarea>
                     </div>
                     <div class="form-group">
                         <label for="ebp">Evidence-Based Practice (EBP) or Initiative:</label>
-                        <textarea id="ebp" class="saveable" placeholder="Describe the core intervention or practice being implemented.">A new HIV prevention protocol that includes updated guidelines for patient screening, risk assessment, and counseling on prevention methods, including Pre-Exposure Prophylaxis (PrEP).</textarea>
+                        <textarea id="ebp" class="saveable" placeholder="Describe the core intervention or practice being implemented.">The core practice is a new HIV prevention protocol that includes updated guidelines for patient screening, risk assessment, and counseling on prevention methods, including Pre-Exposure Prophylaxis (PrEP).</textarea>
                     </div>
                     <div class="form-group">
                         <label>Team & Roles:</label>
@@ -1596,35 +1596,36 @@
         
         function loadCaseStudyData() {
             // Overview
-            document.getElementById('project-name').value = "HIV Prevention Protocol Roll-Out";
+            document.getElementById('project-name').value = "HIV Prevention Protocol Virtual Training Rollout";
             document.getElementById('primary-goal').value = "To successfully train clinical staff at 10 community clinics on the new HIV prevention protocol using an adapted virtual format to ensure safe and effective implementation amidst staff shortages and public health precautions.";
             document.getElementById('ebp').value = "The core practice is a new HIV prevention protocol that includes updated guidelines for patient screening, risk assessment, and counseling on prevention methods, including Pre-Exposure Prophylaxis (PrEP).";
             addRow('team-members-table', { name: 'Dr. Anya Sharma', role: 'Project Lead / Principal Investigator' });
             addRow('team-members-table', { name: 'Ben Carter', role: 'Training Coordinator' });
             addRow('team-members-table', { name: 'Maria Rodriguez', role: 'Clinical Specialist / EBP Expert' });
             
-            // Determinants
-            addRow('determinants-container', { determinant: 'COVID-19 health and safety precautions', context: 'Outer Setting', notes: 'Prevents large in-person gatherings, making original training plan impossible.' });
-            addRow('determinants-container', { determinant: 'Staff shortages at community clinics', context: 'Inner Setting', notes: 'Clinics report difficulty releasing staff for multi-day trainings.' });
-            addRow('determinants-container', { determinant: 'Digital literacy and comfort with technology', context: 'Characteristics of Individuals', notes: 'Some staff may be uncomfortable with or lack access to the required webinar software.' });
+            // Determinants (Original Plan)
+            addRow('determinants-container', { determinant: 'Clinician knowledge gaps about the new HIV protocol', context: 'Characteristics of Individuals', notes: 'Pre-implementation surveys indicated low familiarity with updated PrEP guidelines.' });
+            addRow('determinants-container', { determinant: 'Limited time for staff to attend lengthy training', context: 'Inner Setting', notes: 'Clinic managers expressed concern about pulling staff from clinical duties for two full half-days.' });
+            addRow('determinants-container', { determinant: 'Potential for inconsistent application of the protocol', context: 'Inner Setting', notes: 'Risk that different clinics might implement the protocol with variations, affecting fidelity.' });
 
-            // Strategies
-            addRow('strategies-container', { strategy: 'Conduct educational meetings', determinants: 'Staff shortages at community clinics (Inner Setting)', mechanism: 'Provide protected time and expert instruction for staff to learn the new protocol and ask questions.' });
-            addRow('strategies-container', { strategy: 'Develop educational materials', determinants: 'Staff shortages at community clinics (Inner Setting)', mechanism: 'Created concise, easy-to-digest handouts to supplement the shortened training time and provide a reference for staff with limited availability.' });
-            addRow('strategies-container', { strategy: 'Make training dynamic', determinants: 'Perceived complexity of virtual training technology (Characteristics of Individuals)', mechanism: 'Incorporated interactive elements like polls and Q&A sessions into the webinar to increase engagement and comfort with the virtual format.' });
+            // Strategies (Original Plan)
+            addRow('strategies-container', { strategy: 'Conduct educational meetings', determinants: 'Clinician knowledge gaps (Characteristics of Individuals)', mechanism: 'Directly increases knowledge and provides a forum for questions and answers.' });
+            addRow('strategies-container', { strategy: 'Develop educational materials', determinants: 'Clinician knowledge gaps (Characteristics of Individuals)', mechanism: 'Provides a take-home reference to reinforce learning and guide practice.' });
+            addRow('strategies-container', { strategy: 'Identify and prepare champions', determinants: 'Potential for inconsistent application (Inner Setting)', mechanism: 'Creates local experts who can provide peer support and ongoing guidance to ensure fidelity.' });
 
-            // Mechanisms
-            addRow('mechanisms-container', { mechanism: 'Increased Accessibility & Safety', description: 'By moving the training online, it becomes accessible to all staff regardless of location and eliminates health risks associated with in-person gatherings.' });
-            addRow('mechanisms-container', { mechanism: 'Enhanced Knowledge Retention', description: 'The provision of supplementary handouts allows staff to review key information at their own pace, reinforcing learning from the webinar.' });
+            // Mechanisms (Original Plan)
+            addRow('mechanisms-container', { mechanism: 'Increased Knowledge and Skills', description: 'The in-person training sessions are designed to directly impart essential knowledge and skills related to the new protocol.' });
+            addRow('mechanisms-container', { mechanism: 'Improved Self-Efficacy', description: 'Interactive, in-person training with case studies and Q&A will increase clinician confidence in applying the new protocol.' });
+            addRow('mechanisms-container', { mechanism: 'Peer Support and Social Influence', description: 'Champions at each site will foster a local network of support, encouraging consistent and correct protocol use through positive peer influence.' });
 
-            // Outcomes
-            addRow('implementation-outcomes-container', { outcome: 'Feasibility', metric: 'At least 90% of targeted staff attend the live webinar or watch the recording.', stakeholder: 'Clinic Staff', source: 'Webinar Attendance Logs', owner: 'Ben Carter', date: '2025-08-29' });
-            addRow('implementation-outcomes-container', { outcome: 'Acceptability', metric: '>80% of staff rate the virtual training as "Acceptable" or "Highly Acceptable" on post-training survey.', stakeholder: 'Clinic Staff', source: 'Post-Training Survey', owner: 'Dr. Anya Sharma', date: '2025-09-05' });
+            // Outcomes (Original Plan)
+            addRow('implementation-outcomes-container', { outcome: 'Feasibility', metric: 'At least 90% of targeted staff attend the in-person training sessions.', stakeholder: 'Clinic Staff', source: 'Sign-in Sheets', owner: 'Ben Carter', date: '2025-08-29' });
+            addRow('implementation-outcomes-container', { outcome: 'Acceptability', metric: '>80% of staff rate the in-person training as "Acceptable" or "Highly Acceptable".', stakeholder: 'Clinic Staff', source: 'Post-Training Survey', owner: 'Dr. Anya Sharma', date: '2025-09-05' });
             addRow('implementation-outcomes-container', { outcome: 'Fidelity', metric: '95% adherence to protocol steps in chart audits 1 month post-training.', stakeholder: 'Clinic Staff', source: 'Chart Audits', owner: 'Maria Rodriguez', date: '2025-09-30' });
             addRow('service-outcomes-container', { outcome: 'Effectiveness', metric: '20% increase in documented risk assessments for eligible patients.', source: 'EHR Reports', target: 'Achieve by end of Q4 2025', frequency: 'Quarterly' });
             addRow('client-outcomes-container', { outcome: 'Satisfaction', metric: 'Maintain or improve client satisfaction scores related to preventative care discussions.', population: 'Clinic Patients', target: 'No decrease from baseline', collection_points: 'Quarterly clinic surveys' });
             
-            // Protocol
+            // Protocol (Adapted Plan)
             addRow('timeline-container', { task: 'Adapt in-person training materials for virtual webinar', start: '2025-07-21', end: '2025-08-01', owner: 'Maria Rodriguez', status: 'Complete', progress: '100', notes: 'Condense two half-days into 90 minutes.' });
             addRow('timeline-container', { task: 'Develop supplementary email handouts', start: '2025-08-04', end: '2025-08-08', owner: 'Maria Rodriguez', status: 'In Progress', progress: '75', notes: 'Include key protocol steps and FAQs.' });
             addRow('timeline-container', { task: 'Schedule webinar with 10 clinic managers', start: '2025-08-11', end: '2025-08-15', owner: 'Ben Carter', status: 'In Progress', progress: '50', notes: 'Coordinate to find a suitable time for all sites.' });
@@ -1640,7 +1641,7 @@
             addRow('instruments-container', { instrument: 'Post-Training Feedback Survey', construct: 'Acceptability, Feasibility, Knowledge', source: 'Internal Qualtrics Link', notes: 'Administered via email link immediately following the webinar. 5-point Likert scales and 3 open-ended questions.' });
             addRow('instruments-container', { instrument: 'Protocol Fidelity Checklist', construct: 'Fidelity, Adherence', source: 'Internal Document', notes: 'Used by Maria Rodriguez for monthly chart audits of 10 random charts per clinic.' });
 
-            // Adaptations
+            // Adaptations (This section now correctly shows the deviation from the original plan)
             addRow('adaptations-container', { modification: 'Changed training modality from in-person to virtual', date: '2025-07-15', component: 'Conduct educational meetings', nature: 'Substituting', goal: 'Improve Acceptability/Feasibility', planned: 'Unplanned/Reactive', decisionMakers: 'Project Team', decisionRationale: 'Reactive modification due to epidemic conditions (COVID-19 precautions) and clinic-reported staff shortages, which made the original in-person strategy unfeasible. The goal was to ensure the training could still be delivered safely and accessibly.' });
             addRow('adaptations-container', { modification: 'Reduced training time and added email handouts', date: '2025-07-15', component: 'Conduct educational meetings', nature: 'Shortening', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Project Team', decisionRationale: 'The training was shortened from two half-days to a single 90-minute session to fit clinic schedules. To maintain fidelity to the core EBP information, key content was moved to supplementary handouts distributed via email.' });
 
