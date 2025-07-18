@@ -852,7 +852,7 @@
                 <li>
                     <a class="nav-link active" data-target="overview-landing">
 <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22-.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+  <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69-.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22-.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
 </svg>                        Overview
                     </a>
                 </li>
@@ -895,20 +895,21 @@
         </aside>
 
         <main class="main-content">
+            <!-- All content sections will be injected here from templates -->
             <div id="overview-landing" class="content-section active">
                 <div class="content-card">
                     <h3>Project Overview</h3>
                     <div class="form-group">
                         <label for="project-name">Title:</label>
-                        <input type="text" id="project-name" class="saveable" placeholder="Enter a name for the project or initiative." value="Community Clinic HIV PrEP Protocol Roll-Out"/>
+                        <input type="text" id="project-name" class="saveable" placeholder="Enter a name for the project or initiative." value="HIV PrEP Protocol Roll-Out"/>
                     </div>
                     <div class="form-group">
                         <label for="primary-goal">Primary Goal:</label>
-                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency in the new workflows.</textarea>
+                        <textarea id="primary-goal" class="saveable" placeholder="State the main goal of this implementation effort.">To successfully implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency.</textarea>
                     </div>
                     <div class="form-group">
                         <label for="ebp">Evidence-Based Practice (EBP) or Initiative:</label>
-                        <textarea id="ebp" class="saveable" placeholder="Describe the core intervention or practice being implemented.">A new evidence-based protocol for routine HIV screening and linkage to prevention services (including PrEP/PEP) for at-risk patient populations in a community clinic setting. This involves updated clinical workflows, new EHR templates, and patient education materials.</textarea>
+                        <textarea id="ebp" class="saveable" placeholder="Describe the core intervention or practice being implemented.">A new HIV prevention protocol that includes updated guidelines for patient screening, risk assessment, and counseling on prevention methods, including Pre-Exposure Prophylaxis (PrEP).</textarea>
                     </div>
                     <div class="form-group">
                         <label>Team & Roles:</label>
@@ -943,6 +944,7 @@
         </main>
     </div>
 
+    <!-- All HTML templates are below -->
     <template id="team-members-table-template">
         <tr>
             <td data-label="Name"><input type="text" data-field="name" placeholder="Full Name"></td>
@@ -1088,7 +1090,7 @@
                     <p class="outcome-definition-display">Select an outcome to see its definition.</p>
                 </div>
                 <div class="form-group full-width"><label>Metric & Target</label><input type="text" data-field="metric" placeholder="e.g., >80% score on the Acceptability of Intervention Measure (AIM)"></div>
-                <div class="form-group"><label>Partners</label><input type="text" data-field="stakeholder" placeholder="e.g., Providers, Clients"></div>
+                <div class="form-group"><label>Stakeholder</label><input type="text" data-field="stakeholder" placeholder="e.g., Providers, Clients"></div>
                 <div class="form-group"><label>Data Source</label><input type="text" data-field="source" placeholder="e.g., Staff Survey"></div>
                 <div class="form-group">
                     <label>Owner</label>
@@ -1205,7 +1207,7 @@
                 <div class="form-group"><label>Who was involved?</label><input type="text" data-field="decisionMakers" placeholder="e.g., Project Team, Leadership"></div>
                 <div class="form-group full-width">
                     <label>Notes</label>
-                    <textarea data-field="decisionRationale" placeholder="e.g., How was the decision was made to modify? Were there any challenges? If so, How were they resolved?"></textarea>
+                    <textarea data-field="decisionRationale" placeholder="e.g., How was the decision was made to modify? What was the level of the rationale? Were there any challenges? If so, how were they resolved?"></textarea>
                 </div>
             </div>
         </div>
@@ -1228,9 +1230,9 @@
                 "benefit": ["Low", "Medium", "High"],
                 "feasibility": ["Low", "Medium", "High"],
                 "itemType": ["Task / Activity", "Event", "Phase", "Milestone"],
-                "fidelityDimension": ["Adherence", "Dose", "Quality", "Participant Responsiveness"],
+                "fidelityDimension": ["Adherence", "Dose", "Quality", "Participant Responsiveness", "Program Differentiation"],
                 "adaptationNature": ["Tailoring", "Adding", "Removing", "Shortening", "Lengthening", "Substituting", "Reordering"],
-                "adaptationGoal": ["Increase Reach", "Improve Fit", "Decrease Costs", "Improve Effectiveness"],
+                "adaptationGoal": ["Increase Reach", "Improve Fit", "Decrease Costs", "Improve Effectiveness", "Increase Adoption", "Improve Acceptability/Feasibility", "Improve Fidelity to EBP", "Improve Sustainability", "Increase Equity"],
                 "adaptationPlanned": ["Planned/Proactive", "Planned/Reactive", "Unplanned/Reactive"],
                 "contextLevels": ["Innovation Characteristics", "Outer Setting", "Inner Setting", "Characteristics of Individuals"]
             },
@@ -1398,159 +1400,12 @@
         function initializeApp() {
             console.log("Initializing application...");
             buildPageTemplates();
-            // Load data from either local storage or the default case data
-            const savedData = localStorage.getItem('implementationPlanData');
-            if (savedData) {
-                loadPlanFromLocalStorage();
-            } else {
-                populateWithCaseData();
-            }
+            loadPlanFromLocalStorage();
             setupEventListeners();
             navigateTo('overview-landing', true);
             console.log("Application initialized.");
         }
         
-        function populateWithCaseData() {
-            const caseData = {
-                simpleInputs: {
-                    'project-name': 'Community Clinic PrEP Protocol Roll-Out',
-                    'primary-goal': 'To successfully implement the new HIV prevention protocol across all 10 community clinics by December 31, 2025, ensuring at least 90% of clinical staff are trained and demonstrating competency.',
-                    'ebp': 'A new evidence-based protocol for routine HIV screening and linkage to prevention services (including PrEP/PEP) for at-risk patient populations in a community clinic setting. This involves updated clinical workflows, new EHR templates, and patient education materials.'
-                },
-                tables: {
-                    'team-members-table': [
-                        { name: 'Dr. Alisha Patel', role: 'Principal Investigator (PI)/Project Lead' },
-                        { name: 'Dana Thompson', role: 'Project Manager' },
-                        { name: 'Jenna Williams', role: 'Lead Trainer' },
-                        { name: 'Samira Khan', role: 'Clinical Supervisor' },
-                        { name: 'Brian O\'Connell', role: 'Data Manager' },
-                        { name: 'TBD', role: 'Clinic Champions (10)' }
-                    ],
-                    'fidelity-plan-container': [
-                        { component: 'Staff Training', function: 'Ensure staff understand and can correctly apply the new HIV prevention protocol.', dimension: 'Dose', method: 'Attendance logs, post-webinar survey', target: '>90% of staff attend the live or recorded webinar' },
-                        { component: 'Use of Screening Questions', function: 'To identify at-risk patients for further discussion.', dimension: 'Adherence', method: 'EHR Chart Audit', target: 'Screening questions documented for >80% of eligible patients' }
-                    ],
-                    'determinants-container': [
-                        { determinant: 'Staff shortages and high turnover', context: 'Inner Setting', notes: 'Identified through preliminary meetings with clinic directors. This makes scheduling multi-day, in-person trainings nearly impossible.' },
-                        { determinant: 'Staff competing priorities and limited time', context: 'Inner Setting', notes: 'Clinicians have heavy patient loads and minimal protected time for non-clinical activities, including training.' },
-                        { determinant: 'COVID-19 precautions and social distancing mandates', context: 'Outer Setting', notes: 'Ongoing public health guidelines restrict large in-person gatherings, making group training sessions a safety concern.' },
-                        { determinant: 'Staff anxiety with new technology', context: 'Characteristics of Individuals', notes: 'Some staff members expressed discomfort with virtual meeting platforms during initial conversations.' }
-                    ],
-                    'strategies-container': [
-                        { strategy: 'Conduct ongoing training', determinants: 'Staff knowledge gaps (Inner Setting)', mechanism: 'Adapt training to a virtual format to improve accessibility and feasibility given staff shortages.' },
-                        { strategy: 'Develop educational materials', determinants: 'Limited time for training (Inner Setting)', mechanism: 'Create concise handouts to supplement the shortened webinar, allowing for asynchronous learning.' },
-                        { strategy: 'Distribute educational materials', determinants: 'Limited time for training (Inner Setting)', mechanism: 'Email handouts prior to the webinar so staff can review them beforehand.' },
-                        { strategy: 'Tailor strategies', determinants: 'Staff shortages, COVID precautions (Inner/Outer Setting)', mechanism: 'Pivoted the entire training approach from in-person to virtual to overcome logistical barriers.' }
-                    ],
-                    'mechanisms-container': [
-                        { mechanism: 'Increased Knowledge & Skills', description: 'The virtual webinar and supplementary handouts are designed to increase staff knowledge of the new HIV protocol and build their skills in applying it.' },
-                        { mechanism: 'Improved Accessibility', description: 'By moving to a virtual format, the training becomes more accessible to staff who cannot attend a multi-day in-person session due to scheduling conflicts or location.' }
-                    ],
-                    'implementation-outcomes-container': [
-                        { outcome: 'Feasibility', metric: 'Staff survey rating on the feasibility of the virtual training format > 4/5', stakeholder: 'Clinical Staff', source: 'Post-training survey', owner: 'Brian O\'Connell', date: '2025-11-15' },
-                        { outcome: 'Fidelity', metric: 'Adapted training curriculum covers >95% of the original core components', stakeholder: 'Project Team', source: 'Curriculum Review', owner: 'Jenna Williams', date: '2025-07-31' },
-                        { outcome: 'Adoption', metric: '100% of the 10 clinics have staff complete the new training', stakeholder: 'Clinics', source: 'Attendance Records', owner: 'Dana Thompson', date: '2025-11-01' }
-                    ],
-                    'service-outcomes-container': [
-                        { outcome: 'Effectiveness', metric: '20% increase in the rate of HIV screening for eligible patients', source: 'EHR Data', target: 'Achieve by 2026-03-31', frequency: 'Quarterly' }
-                    ],
-                    'client-outcomes-container': [
-                        { outcome: 'Satisfaction', metric: 'Patient satisfaction survey (Item: "I feel comfortable discussing HIV prevention with my provider")', population: 'All screened patients', target: 'Average score > 4.5/5', collection_points: 'Post-visit survey' }
-                    ],
-                    'timeline-container': [
-                        // Phase 1: Project Initiation & Planning
-                        { task: 'Project Kick-off Meeting', start: '2025-06-02', end: '2025-06-02', owner: 'Dr. Alisha Patel', status: 'Complete', progress: '100', notes: 'Official project start. Confirmed scope, goals, and team roles.' },
-                        { task: 'Finalize Project Charter & Implementation Plan', start: '2025-06-03', end: '2025-06-17', owner: 'Dana Thompson', status: 'Complete', progress: '100', notes: 'Document approved by leadership.' },
-                        { task: 'Conduct Leadership & Partner Engagement Meetings', start: '2025-06-18', end: '2025-06-30', owner: 'Dr. Alisha Patel', status: 'Complete', progress: '100', notes: 'Secured buy-in from all 10 clinic managers.' },
-                        { task: 'Identify and Recruit Clinic Champions', start: '2025-07-01', end: '2025-07-15', owner: 'Samira Khan', status: 'In Progress', progress: '75', notes: '8 of 10 champions identified. Finalizing last two.' },
-
-                        // Phase 2: Protocol Development & Systems Setup
-                        { task: 'Adapt CDC PrEP Guidelines for Local Context', start: '2025-07-16', end: '2025-07-31', owner: 'Dr. Alisha Patel', status: 'Not Started', progress: '0', notes: 'Review and tailor clinical guidelines for our patient population.' },
-                        { task: 'Configure EHR with New PrEP Templates & Order Sets', start: '2025-08-01', end: '2025-08-22', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Includes screening questions, lab orders, and prescription templates.' },
-                        { task: 'Develop Patient Education Materials (Brochures, Posters)', start: '2025-08-04', end: '2025-08-29', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'Materials to be reviewed for health literacy and cultural appropriateness.' },
-                        { task: 'Develop Staff Training Curriculum & Materials', start: '2025-08-25', end: '2025-09-12', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'To include webinar, quick-reference guides, and competency quiz.' },
-
-                        // Phase 3: Training & Pilot Implementation
-                        { task: 'Train Clinic Champions on Protocol & Their Role', start: '2025-09-15', end: '2025-09-19', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'Champions will help facilitate training and support peers.' },
-                        { task: 'Conduct Staff Training Webinars (All Clinics)', start: '2025-09-22', end: '2025-10-10', owner: 'Jenna Williams', status: 'Not Started', progress: '0', notes: 'Multiple sessions to accommodate all staff schedules.' },
-                        { task: 'Pilot Implementation at 2 Clinics', start: '2025-10-13', end: '2025-11-07', owner: 'Samira Khan', status: 'Not Started', progress: '0', notes: 'Pilot sites: Downtown Clinic and Westside Family Health.' },
-                        { task: 'Collect Pilot Feedback & Refine Protocol/Workflow', start: '2025-11-10', end: '2025-11-21', owner: 'Dana Thompson', status: 'Not Started', progress: '0', notes: 'Use surveys and focus groups with pilot staff.' },
-
-                        // Phase 4: Full Roll-out & Monitoring
-                        { task: 'Full Roll-out to Remaining 8 Clinics', start: '2025-11-24', end: '2025-12-19', owner: 'Dana Thompson', status: 'Not Started', progress: '0', notes: 'Staggered launch, 2 clinics per week.' },
-                        { task: 'Begin Monthly Fidelity Monitoring via Chart Audits', start: '2025-12-01', end: '2026-06-30', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Ongoing task. First report due Jan 15, 2026.' },
-                        { task: 'Provide Ongoing Coaching & Clinical Supervision', start: '2025-12-01', end: '2026-06-30', owner: 'Samira Khan', status: 'Not Started', progress: '0', notes: 'Regular check-ins with clinic champions and staff.' },
-
-                        // Phase 5: Evaluation & Sustainment
-                        { task: 'Administer Post-Implementation Staff Survey', start: '2026-01-05', end: '2026-01-16', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Assess acceptability, appropriateness, and feasibility.' },
-                        { task: 'Analyze Initial Outcome Data (3 months post-rollout)', start: '2026-03-16', end: '2026-03-27', owner: 'Brian O\'Connell', status: 'Not Started', progress: '0', notes: 'Focus on screening rates and PrEP uptake.' },
-                        { task: 'Present Final Report to Leadership', start: '2026-04-13', end: '2026-04-17', owner: 'Dr. Alisha Patel', status: 'Not Started', progress: '0', notes: 'Summarize project outcomes and provide recommendations for sustainment.' }
-                    ],
-                    'instruments-container': [
-                        { instrument: 'Post-Training Competency Quiz', construct: 'Staff Knowledge of Protocol', source: 'Internal Document', notes: '10-item multiple choice quiz administered via survey link at the end of the webinar. Passing score is 80%.' },
-                        { instrument: 'Staff Feedback Survey', construct: 'Acceptability & Feasibility', source: 'Internal Document', notes: 'Administered after the competency quiz. Uses Likert scales and open-ended questions to gather feedback on the virtual training format.' }
-                    ],
-                    'adaptations-container': [
-                        { modification: 'Changed training from in-person to virtual webinar', date: '2025-07-01', component: 'Staff Training', nature: 'Substituting', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Dr. Alisha Patel, Dana Thompson, Jenna Williams', decisionRationale: 'Decision made in response to clinic directors\' reports of severe staffing shortages and ongoing concerns about in-person gatherings. The team decided a virtual format was the only feasible way to proceed without significant delays.' },
-                        { modification: 'Reduced training time to 90 minutes', date: '2025-07-08', component: 'Staff Training', nature: 'Shortening', goal: 'Improve Fit', planned: 'Planned/Reactive', decisionMakers: 'Jenna Williams, Samira Khan', decisionRationale: 'To minimize disruption to clinical services, the synchronous training was shortened to 90 minutes. Key information and case studies were moved to emailable handouts to be reviewed asynchronously. This addresses the \'competing priorities\' determinant.' },
-                        { modification: 'Created supplementary handouts for staff', date: '2025-07-08', component: 'Staff Training', nature: 'Adding', goal: 'Improve Fit', planned: 'Planned/Reactive', decisionMakers: 'Jenna Williams, Samira Khan', decisionRationale: 'To support learning in asynchronous training, supplementary materials were created to provide training participants in case they want to revisit any components of the training.' }
-                    ],
-                    'risks-container': [
-                         { risk: 'Reduced evaluation funding for FY26', start: '2025-07-08', likelihood: 'High', impact: 'High', cost: '5000', mitigation: 'Hire graduate student interns and offer mentorship opportunities.', notes: 'Risk identified by team during meeting on 6/22.'},
-                         { risk: 'Adapted training may lead to lower competency', start: '2025-07-08', likelihood: 'Medium', impact: 'Medium', cost: '1000', mitigation: 'Develop mandatory post-training competency quiz and offer optional Q&A sessions with the clinical supervisor.', notes: 'Risk identified by Lead Trainer after decision to shorten training time.'},
-                         { risk: 'Zoom or other technical challenges during training', start: '2025-07-08', likelihood: 'High', impact: 'Low', cost: '100', mitigation: 'Develop mandatory post-training competency quiz and offer optional Q&A sessions with the clinical supervisor.', notes: 'Risk identified by Lead Trainer after decision to shorten training time.'}
-
-                    ],
-                    'opportunities-container': [
-                        { opportunity: 'Virtual materials can be reused for new staff', start: '2025-07-08', benefit: 'High', feasibility: 'High', affected: '50', notes: 'The training webinar will be recorded. The handouts and recording will be bundled into a new hire orientation package, addressing the \'staff turnover\' determinant and reducing future training costs.'},
-                        { opportunity: 'Partner with community organizations to spread program information', start: '2025-07-30', benefit: 'High', feasibility: 'High', affected: '1000', notes: 'May also benefit future activities through new relationships and perspectives.'},
-                        { opportunity: 'Get donations for dedicated office space', start: '2025-08-07', benefit: 'Low', feasibility: 'Low', affected: '10', notes: 'May also benefit future activities through new relationships and perspectives.'}
-                    ]
-                }
-            };
-
-            // 1. Populate simple inputs first
-            if (caseData.simpleInputs) {
-                Object.entries(caseData.simpleInputs).forEach(([id, value]) => {
-                    const input = document.getElementById(id);
-                    if (input) input.value = value;
-                });
-            }
-
-            // 2. Populate tables in a specific order to handle dependencies
-            if (caseData.tables) {
-                // Team members first, as others depend on it for 'owner' fields
-                (caseData.tables['team-members-table'] || []).forEach(rowData => addRow('team-members-table', rowData));
-                
-                // Fidelity components next, as adaptations depend on it
-                (caseData.tables['fidelity-plan-container'] || []).forEach(rowData => addRow('fidelity-plan-container', rowData));
-
-                // Now populate the rest
-                const remainingTables = [
-                    'determinants-container', 'strategies-container', 'mechanisms-container',
-                    'implementation-outcomes-container', 'service-outcomes-container', 'client-outcomes-container',
-                    'timeline-container', 'instruments-container', 'adaptations-container',
-                    'risks-container', 'opportunities-container'
-                ];
-                remainingTables.forEach(tableId => {
-                    (caseData.tables[tableId] || []).forEach(rowData => addRow(tableId, rowData));
-                });
-            }
-
-            // 3. Now that the DOM is populated, run all update/refresh functions
-            const allContainerSelectors = [
-                '#team-members-table tbody', '#determinants-container', '#strategies-container', '#mechanisms-container',
-                '#risks-container', '#opportunities-container', '#timeline-container',
-                '#implementation-outcomes-container', '#service-outcomes-container', '#client-outcomes-container',
-                '#fidelity-plan-container', '#adaptations-container', '#instruments-container'
-            ];
-            allContainerSelectors.forEach(selector => updateEmptyState(selector.replace('#', '').split(' ')[0]));
-            updateSidebarTitle();
-            updateAllDashboards();
-            populateGlossary();
-            initializeFlippableCards();
-        }
-
         function buildPageTemplates() {
             for (const [pageId, config] of Object.entries(state.pageConfig)) {
                 const section = document.getElementById(pageId);
@@ -1619,10 +1474,10 @@
                                 </div>
                             </div>
                             <div class="planning-module summary-section">
-                                <div class="planning-module-header"><h4>Implementation Activities</h4></div>
+                                <div class="planning-module-header"><h4>Protocol Task List</h4></div>
                                 <div class="planning-module-content">
                                     <div class="task-filter-controls">
-                                        <input type="text" id="task-search-input" placeholder="Search by task / activity name...">
+                                        <input type="text" id="task-search-input" placeholder="Search by task name...">
                                         <select id="task-status-filter"><option value="">All Statuses</option></select>
                                     </div>
                                     <table id="interactive-task-table">
@@ -1728,7 +1583,8 @@
                     });
                 }
             } else {
-                console.log("No saved plan found. Initializing new template.");
+                console.log("No saved plan found. Initializing with case study data.");
+                loadCaseStudyData();
             }
             
             allContainerSelectors.forEach(selector => updateEmptyState(selector.replace('#', '').split(' ')[0]));
@@ -1737,6 +1593,67 @@
             populateGlossary();
             initializeFlippableCards();
         }
+        
+        function loadCaseStudyData() {
+            // Overview
+            document.getElementById('project-name').value = "HIV Prevention Protocol Virtual Training Rollout";
+            document.getElementById('primary-goal').value = "To successfully train clinical staff at 10 community clinics on the new HIV prevention protocol using an adapted virtual format to ensure safe and effective implementation amidst staff shortages and public health precautions.";
+            document.getElementById('ebp').value = "The core practice is a new HIV prevention protocol that includes updated guidelines for patient screening, risk assessment, and counseling on prevention methods, including Pre-Exposure Prophylaxis (PrEP).";
+            addRow('team-members-table', { name: 'Dr. Anya Sharma', role: 'Project Lead / Principal Investigator' });
+            addRow('team-members-table', { name: 'Ben Carter', role: 'Training Coordinator' });
+            addRow('team-members-table', { name: 'Maria Rodriguez', role: 'Clinical Specialist / EBP Expert' });
+            
+            // Determinants
+            addRow('determinants-container', { determinant: 'COVID-19 health and safety precautions', context: 'Outer Setting', notes: 'Prevents large in-person gatherings, making original training plan impossible.' });
+            addRow('determinants-container', { determinant: 'Staff shortages at community clinics', context: 'Inner Setting', notes: 'Clinics report difficulty releasing staff for multi-day trainings.' });
+            addRow('determinants-container', { determinant: 'Perceived complexity of virtual training technology', context: 'Characteristics of Individuals', notes: 'Some staff may be uncomfortable with or lack access to the required webinar software.' });
+
+            // Strategies
+            addRow('strategies-container', { strategy: 'Conduct educational meetings', determinants: 'Staff shortages at community clinics (Inner Setting)', mechanism: 'Provide protected time and expert instruction for staff to learn the new protocol and ask questions.' });
+            addRow('strategies-container', { strategy: 'Develop educational materials', determinants: 'Staff shortages at community clinics (Inner Setting)', mechanism: 'Created concise, easy-to-digest handouts to supplement the shortened training time and provide a reference for staff with limited availability.' });
+            addRow('strategies-container', { strategy: 'Make training dynamic', determinants: 'Perceived complexity of virtual training technology (Characteristics of Individuals)', mechanism: 'Incorporated interactive elements like polls and Q&A sessions into the webinar to increase engagement and comfort with the virtual format.' });
+
+            // Mechanisms
+            addRow('mechanisms-container', { mechanism: 'Increased Accessibility & Safety', description: 'By moving the training online, it becomes accessible to all staff regardless of location and eliminates health risks associated with in-person gatherings.' });
+            addRow('mechanisms-container', { mechanism: 'Enhanced Knowledge Retention', description: 'The provision of supplementary handouts allows staff to review key information at their own pace, reinforcing learning from the webinar.' });
+
+            // Outcomes
+            addRow('implementation-outcomes-container', { outcome: 'Feasibility', metric: 'At least 90% of targeted staff attend the live webinar or watch the recording.', stakeholder: 'Clinic Staff', source: 'Webinar Attendance Logs', owner: 'Ben Carter', date: '2025-08-29' });
+            addRow('implementation-outcomes-container', { outcome: 'Acceptability', metric: '>80% of staff rate the virtual training as "Acceptable" or "Highly Acceptable" on post-training survey.', stakeholder: 'Clinic Staff', source: 'Post-Training Survey', owner: 'Dr. Anya Sharma', date: '2025-09-05' });
+            addRow('implementation-outcomes-container', { outcome: 'Fidelity', metric: '95% adherence to protocol steps in chart audits 1 month post-training.', stakeholder: 'Clinic Staff', source: 'Chart Audits', owner: 'Maria Rodriguez', date: '2025-09-30' });
+            addRow('service-outcomes-container', { outcome: 'Effectiveness', metric: '20% increase in documented risk assessments for eligible patients.', source: 'EHR Reports', target: 'Achieve by end of Q4 2025', frequency: 'Quarterly' });
+            addRow('client-outcomes-container', { outcome: 'Satisfaction', metric: 'Maintain or improve client satisfaction scores related to preventative care discussions.', population: 'Clinic Patients', target: 'No decrease from baseline', collection_points: 'Quarterly clinic surveys' });
+            
+            // Protocol
+            addRow('timeline-container', { task: 'Adapt in-person training materials for virtual webinar', start: '2025-07-21', end: '2025-08-01', owner: 'Maria Rodriguez', status: 'Complete', progress: '100', notes: 'Condense two half-days into 90 minutes.' });
+            addRow('timeline-container', { task: 'Develop supplementary email handouts', start: '2025-08-04', end: '2025-08-08', owner: 'Maria Rodriguez', status: 'In Progress', progress: '75', notes: 'Include key protocol steps and FAQs.' });
+            addRow('timeline-container', { task: 'Schedule webinar with 10 clinic managers', start: '2025-08-11', end: '2025-08-15', owner: 'Ben Carter', status: 'In Progress', progress: '50', notes: 'Coordinate to find a suitable time for all sites.' });
+            addRow('timeline-container', { task: 'Conduct live webinar training', start: '2025-08-22', end: '2025-08-22', owner: 'Ben Carter', status: 'Not Started', progress: '0', notes: 'Event milestone.' });
+            addRow('timeline-container', { task: 'Distribute handouts, recording, and survey', start: '2025-08-22', end: '2025-08-22', owner: 'Ben Carter', status: 'Not Started', progress: '0', notes: 'To be sent immediately after webinar.' });
+            addRow('timeline-container', { task: 'Analyze post-training survey data', start: '2025-08-25', end: '2025-09-05', owner: 'Dr. Anya Sharma', status: 'Not Started', progress: '0', notes: 'Assess acceptability and initial knowledge gain.' });
+
+            // Fidelity
+            addRow('fidelity-plan-container', { component: 'Patient Risk Assessment', function: 'To correctly identify patients eligible for the prevention protocol.', dimension: 'Adherence', method: 'Chart Audit Checklist', target: '>95% of checklist items completed.' });
+            addRow('fidelity-plan-container', { component: 'Offer of PrEP Counseling', function: 'To ensure all eligible patients are informed of their options.', dimension: 'Adherence', method: 'Chart Audit Checklist', target: 'Offered to 100% of eligible patients.' });
+            
+            // Instruments
+            addRow('instruments-container', { instrument: 'Post-Training Feedback Survey', construct: 'Acceptability, Feasibility, Knowledge', source: 'Internal Qualtrics Link', notes: 'Administered via email link immediately following the webinar. 5-point Likert scales and 3 open-ended questions.' });
+            addRow('instruments-container', { instrument: 'Protocol Fidelity Checklist', construct: 'Fidelity, Adherence', source: 'Internal Document', notes: 'Used by Maria Rodriguez for monthly chart audits of 10 random charts per clinic.' });
+
+            // Adaptations
+            addRow('adaptations-container', { modification: 'Changed training modality from in-person to virtual', date: '2025-07-15', component: 'Conduct educational meetings', nature: 'Substituting', goal: 'Improve Acceptability/Feasibility', planned: 'Unplanned/Reactive', decisionMakers: 'Project Team', decisionRationale: 'Reactive modification due to epidemic conditions (COVID-19 precautions) and clinic-reported staff shortages, which made the original in-person strategy unfeasible. The goal was to ensure the training could still be delivered safely and accessibly.' });
+            addRow('adaptations-container', { modification: 'Reduced training time and added email handouts', date: '2025-07-15', component: 'Conduct educational meetings', nature: 'Shortening', goal: 'Improve Fit', planned: 'Unplanned/Reactive', decisionMakers: 'Project Team', decisionRationale: 'The training was shortened from two half-days to a single 90-minute session to fit clinic schedules. To maintain fidelity to the core EBP information, key content was moved to supplementary handouts distributed via email.' });
+
+            // Risks
+            addRow('risks-container', { risk: 'Low staff engagement in virtual format', start: '2025-07-16', likelihood: 'Medium', impact: 'High', cost: '0', mitigation: 'Incorporate interactive polls, a dedicated Q&A session, and a clinical case study into the webinar. Follow up with managers to encourage attendance.', notes: 'Identified during a team brainstorming session about the challenges of virtual training.' });
+            addRow('risks-container', { risk: 'Staff do not read the supplementary handouts', start: '2025-07-16', likelihood: 'Medium', impact: 'Medium', cost: '0', mitigation: 'Reference the handouts during the webinar, highlighting key sections. Send a reminder email one week after the training.', notes: 'A common issue with email-based materials.' });
+
+            // Opportunities
+            addRow('opportunities-container', { opportunity: 'Recorded webinar can be used for new hire training', start: '2025-07-18', benefit: 'High', feasibility: 'High', affected: '50', notes: 'The virtual format allows for easy recording. This can be packaged into an onboarding module for future staff, improving sustainability and reducing future training costs.' });
+            
+            triggerSave();
+        }
+
 
         function triggerSave() {
             clearTimeout(state.saveTimeout);
@@ -1872,8 +1789,11 @@
             });
 
             if (newRowElement.querySelector('.core-component-dropdown')) {
+                const defaultOptions = ['Content', 'Evaluation', 'Training', 'Context'];
                 const coreComponents = getPlanData().tables['fidelity-plan-container']?.map(c => c.component).filter(Boolean) || [];
-                populateSelect(newRowElement.querySelector('.core-component-dropdown'), coreComponents, 'Select a component...');
+                const strategies = getPlanData().tables['strategies-container']?.map(s => s.strategy).filter(Boolean) || [];
+                const combinedOptions = new Set([...defaultOptions, ...coreComponents, ...strategies]);
+                populateSelect(newRowElement.querySelector('.core-component-dropdown'), Array.from(combinedOptions), 'Select what was modified...');
             }
             
             Object.entries(data).forEach(([field, value]) => {
